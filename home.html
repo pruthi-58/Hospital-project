@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anand Hospital</title>
+    <!-- font-awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'mob-s': '320px',
+                        'mob-l': '375px',
+                        'mob-xl': '425px',
+                        '4k': '2550px',
+                    },
+                    colors: {
+                        primary: '#001B3A',
+                        secondary: '#434343',
+                        highlight: '#00AEEF',
+                    },
+                    fontFamily: {
+                        workSans: ['Work Sans', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="font-outfit">
+    <!-- header -->
+    <header class="font-outfit relative">
+        <div
+            class="container  xl:container  lg:container  md:container  sm:container mob-s:container mx-auto px-4 flex py-4 justify-between items-center">
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/images/logo.png" alt="logo" class="xl:w-56 lg:w-44 md:w-32 mob-s:w-36">
+                </a>
+            </div>
+            <nav class="hidden md:flex md:flex-row md:items-center">
+                <ul class="flex flex-col md:flex-row items-center justify-center xl:gap-8 md:gap-5">
+                    <li class="relative">
+                        <a href="home.html" class="xl:text-xl md:text-sm text-[#404040] text-highlight">
+                            Home
+                            <span class="absolute text-highlight text-3xl right-3.5 -bottom-3">...</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">About Us</a>
+                    </li>
+                    <li>
+                        <a href="" class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">Services</a>
+                    </li>
+                    <li>
+                        <a href="" class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">Appointment</a>
+                    </li>
+                    <li>
+                        <a href="" class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="" class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="flex items-center space-x-5 sm:flex hidden">
+                <a href=""
+                    class="text-primary lg:text-xl border-b-2 border-primary font-medium hover:text-highlight hover:border-highlight">Login</a>
+                <a href=""
+                    class="bg-blue-500 text-white lg:text-base md:text-sm md:px-2 lg:px-5 mob-s:px-2 mob-s:py-2 rounded-full flex items-center hover:bg-blue-600 transition-colors">
+                    Call Now
+                    <i class="fa-solid fa-phone lg:ml-2 text-sm"></i>
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="block md:hidden bg-highlight p-1 focus:outline-none">
+                <img src="assets/images/menu.png" alt="menu" class="mob-s:w-5">
+            </button>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="hidden sm:hidden p-2 bg-white text-center text-black absolute top-full left-0 w-full shadow-lg z-50">
+                <a href="home.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+                <a href="" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+                <a href="" class="block px-4 py-2 hover:bg-gray-100">Services</a>
+                <a href="" class="block px-4 py-2 hover:bg-gray-100">Appointment</a>
+                <a href="" class="block px-4 py-2 hover:bg-gray-100">Blogs</a>
+                <a href="" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
+                <div class="flex items-center justify-center space-x-5 mt-5">
+                    <a href=""
+                        class="text-primary lg:text-xl border-b-2 border-primary font-medium hover:text-highlight hover:border-highlight">Login</a>
+                    <a href=""
+                        class="bg-blue-500 text-white md:text-sm md:px-2 lg:px-5 mob-s:px-2 mob-s:py-2 rounded-full flex items-center hover:bg-blue-600 transition-colors">
+                        Call Now
+                        <i class="fa-solid fa-phone lg:ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="sm:w-[800px] mob-s:w-[400px] sm:h-[800px] mob-s:w-[400px] absolute -top-52 -left-10 opacity-20 rounded-full"
+            style="z-index: -9999; background: rgb(168,207,64);
+background: radial-gradient(circle, rgba(168,207,64,1) 0%, rgba(236,247,245,1) 57%);">
+        </div>
+    </header>
+    <main>
+        <!-- Hero section -->
+        <section class="relative">
+            <div
+                class="container  xl:container  lg:container  md:container  sm:container mob-s:container mx-auto  px-4 flex  justify-between items-center">
+                <div class="grid md:grid-cols-2 gap-8 items-center py-12 md:py-16">
+                    <div class="space-y-6 relative ">
+                        <h1
+                            class="xl:text-6xl 2xl:text-7xl lg:text-5xl mob-s:text-4xl font-bold font-workSans text-[#113C4E] leading-snug">
+                            Compassionate <br> care, <img src="assets/images/child.png" alt="child"
+                                class="inline-block"> <span class="text-highlight leading-snug">exceptional</span>
+                            results!
+                            <div class="relative inline-block">
+                                <img src="assets/images/hospital.png" alt="hospital"
+                                    class="inline-block p-3 bg-[#A8CF45] xl:w-16 lg:w-14 xl:h-16 lg:h-14 mob-s:w-10 mob-s:h-10 rounded-full">
+                                <img src="assets/images/light.png" alt="light"
+                                    class="inline-block absolute 2xl:top-3 xl:top-2 lg:top-2 mob-s:top-1 lg:left-10 mob-s:left-5 p-3 bg-[#ffffff] border-2 border-[#A8CF45] xl:w-16 lg:w-14 xl:h-16 lg:h-14 mob-s:w-10 mob-s:h-10 rounded-full">
+                                <div
+                                    class="inline-block absolute 2xl:top-3 xl:top-2 lg:top-2 mob-s:top-1 lg:left-20 mob-s:left-10 lg:p-4 mob-s:p-2 bg-[#ffffff] border-2 border-[#A8CF45] text-center text-black text-light xl:w-32 lg:w-28 xl:h-16 lg:h-14 mob-s:w-20 mob-s:h-10 rounded-full xl:text-lg lg:text-base mob-s:text-xs">
+                                    Healthcare
+                                </div>
+                            </div>
+                        </h1>
+                        <p class="text-[#404040] lg:text-lg md:text-sm">
+                            Good health is a state of mental, physical and social well being and it does not just
+                            mean the absence disease!
+                        </p>
+                        <div class="w-[700px] h-[600px] absolute -top-10 -right-5 opacity-20 rounded-full"
+                            style="z-index: -9999; background: hsla(196, 100%, 47%, 1);
+
+                            background: radial-gradient(circle, hsla(196, 100%, 47%, 1) 0%, hsla(197, 89%, 72%, 1) 26%, hsla(0, 0%, 100%, 1) 52%, hsla(0, 0%, 100%, 1) 90%);
+                            
+                            background: -moz-radial-gradient(circle, hsla(196, 100%, 47%, 1) 0%, hsla(197, 89%, 72%, 1) 26%, hsla(0, 0%, 100%, 1) 52%, hsla(0, 0%, 100%, 1) 90%);
+                            
+                            background: -webkit-radial-gradient(circle, hsla(196, 100%, 47%, 1) 0%, hsla(197, 89%, 72%, 1) 26%, hsla(0, 0%, 100%, 1) 52%, hsla(0, 0%, 100%, 1) 90%);
+                            
+                            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00AEEF', endColorstr='#79D4F7', GradientType=1 );">
+
+                        </div>
+                    </div>
+
+                    <div class="relative flex justify-center items-center bg-cover bg-center rounded-3xl">
+                        <img src="assets/images/Ellipse 12.png" alt="Ellipse"
+                            class="xl:w-[580px] lg:w-[480px] mob-s:w-[360px]  absolute top-16 left-26"
+                            style="z-index: -999;">
+                        <img src="assets/images/doctor-child.png" alt="Doctor with child"
+                            class="xl:h-[550px] lg:h-[450px] mob-s:h-[350px] rounded-3xl">
+                    </div>
+                </div>
+            </div>
+            <div
+                class="container  xl:container  lg:container  md:container  sm:container mob-s:container mx-auto px-4 flex  justify-between items-center">
+                <!-- Booking Form -->
+                <div
+                    class="absolute lg:-bottom-20 mob-s:-bottom-96  bg-white lg:p-6 mob-s:p-3 rounded-2xl shadow-xl xl:space-y-2 space-y-3 mt-8 2xl:w-[80%] xl:w-[90%] md:w-[97%] mob-s:w-[92%]">
+                    <div class="grid lg:grid-cols-5 md:grid-cols-3 mob-s:grid-cols-1 2xl:gap-5">
+                        <div class="flex flex-col">
+                            <label for="your name" class="lg:text-xl md:text-base pb-2">Name</label>
+                            <input type="text" placeholder="Your Name"
+                                class="sm:w-[85%] px-7 md:py-3 lg:py-5 mob-s:py-2 rounded-full bg-blue-50 border-0 focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="flex flex-col">
+                            <label for="your email" class="lg:text-xl md:text-base pb-2">Email</label>
+                            <input type="email" placeholder="Your Email"
+                                class="sm:w-[85%] px-7 md:py-3 lg:py-5 mob-s:py-2 rounded-full bg-blue-50 border-0 focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="flex flex-col">
+                            <label for="Services" class="lg:text-xl md:text-base pb-2">Service</label>
+                            <select
+                                class="sm:w-[85%] px-7 md:py-3 lg:py-5 mob-s:py-2 rounded-full bg-blue-50 border-0 focus:ring-2 focus:ring-blue-500">
+                                <option>Select Services</option>
+                                <option>Regular Checkup</option>
+                                <option>Vaccination</option>
+                                <option>Consultation</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col">
+                            <label for="your email" class="lg:text-xl md:text-base pb-2">Date</label>
+                            <input type="date"
+                                class="sm:w-[85%] px-7 md:py-3 lg:py-5 mob-s:py-2 rounded-full bg-blue-50 border-0 focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <button
+                            class="sm:w-[85%] mob-s:w-full lg:h-16 mt-10 md:w-auto px-8 md:py-3 lg:py-5 mob-s:py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors">
+                            Booking now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="my-28"></div>
+        <!-- About Us -->
+        <section class="about-us">
+            <div class="container  xl:container  lg:container  md:container  sm:container mob-s:container  mx-auto flex  justify-between items-center">
+                
+            </div>
+        </section>
+    </main>
+    <script src="js/mobile-toggle.js"></script>
+</body>
+
+</html>
