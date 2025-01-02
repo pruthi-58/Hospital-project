@@ -24,10 +24,10 @@
                         'mob-s': '320px',
                         'mob-l': '375px',
                         'mob-xl': '425px',
-                        '4k': '2550px',
+                        '4k': '2560px',
                     },
                     colors: {
-                        primary: '#001B3A',
+                        primary: '#113C4E',
                         secondary: '#434343',
                         highlight: '#00AEEF',
                     },
@@ -39,6 +39,22 @@
             },
         };
     </script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-scroll {
+            animation: scroll 10s linear infinite reverse;
+        }
+    </style>
 </head>
 
 <body class="font-outfit">
@@ -80,7 +96,7 @@
                 <a href=""
                     class="text-primary lg:text-xl border-b-2 border-primary font-medium hover:text-highlight hover:border-highlight">Login</a>
                 <a href=""
-                    class="bg-blue-500 text-white lg:text-base md:text-sm md:px-2 lg:px-5 mob-s:px-2 mob-s:py-2 rounded-full flex items-center hover:bg-blue-600 transition-colors">
+                    class="bg-highlight text-white lg:text-base md:text-sm md:px-2 lg:px-5 mob-s:px-2 mob-s:py-2 rounded-full flex items-center hover:bg-white hover:text-highlight shadow-2xl shadow-highlight transition-colors">
                     Call Now
                     <i class="fa-solid fa-phone lg:ml-2 text-sm"></i>
                 </a>
@@ -131,9 +147,9 @@ background: radial-gradient(circle, rgba(168,207,64,1) 0%, rgba(236,247,245,1) 5
                                 <img src="assets/images/hospital.png" alt="hospital"
                                     class="inline-block p-3 bg-[#A8CF45] xl:w-16 lg:w-14 xl:h-16 lg:h-14 mob-s:w-10 mob-s:h-10 rounded-full">
                                 <img src="assets/images/light.png" alt="light"
-                                    class="inline-block absolute 2xl:top-3 xl:top-2 lg:top-2 mob-s:top-1 lg:left-10 mob-s:left-5 p-3 bg-[#ffffff] border-2 border-[#A8CF45] xl:w-16 lg:w-14 xl:h-16 lg:h-14 mob-s:w-10 mob-s:h-10 rounded-full">
+                                    class="inline-block absolute 2xl:top-3 xl:top-2 lg:top-0 mob-s:top-1 lg:left-10 mob-s:left-5 p-3 bg-[#ffffff] border-2 border-[#A8CF45] xl:w-16 lg:w-14 xl:h-16 lg:h-14 mob-s:w-10 mob-s:h-10 rounded-full">
                                 <div
-                                    class="inline-block absolute 2xl:top-3 xl:top-2 lg:top-2 mob-s:top-1 lg:left-20 mob-s:left-10 lg:p-4 mob-s:p-2 bg-[#ffffff] border-2 border-[#A8CF45] text-center text-black text-light xl:w-32 lg:w-28 xl:h-16 lg:h-14 mob-s:w-20 mob-s:h-10 rounded-full xl:text-lg lg:text-base mob-s:text-xs">
+                                    class="inline-block absolute 2xl:top-3 xl:top-2 lg:top-0 mob-s:top-1 lg:left-20 mob-s:left-10 lg:p-4 mob-s:p-2 bg-[#ffffff] border-2 border-[#A8CF45] text-center text-black text-light xl:w-32 lg:w-28 xl:h-16 lg:h-14 mob-s:w-20 mob-s:h-10 rounded-full xl:text-lg lg:text-base mob-s:text-xs">
                                     Healthcare
                                 </div>
                             </div>
@@ -142,7 +158,7 @@ background: radial-gradient(circle, rgba(168,207,64,1) 0%, rgba(236,247,245,1) 5
                             Good health is a state of mental, physical and social well being and it does not just
                             mean the absence disease!
                         </p>
-                        <div class="w-[700px] h-[600px] absolute -top-10 -right-5 opacity-20 rounded-full"
+                        <div class="md:w-[700px] md:h-[600px] absolute -top-10 opacity-20 rounded-full"
                             style="z-index: -9999; background: hsla(196, 100%, 47%, 1);
 
                             background: radial-gradient(circle, hsla(196, 100%, 47%, 1) 0%, hsla(197, 89%, 72%, 1) 26%, hsla(0, 0%, 100%, 1) 52%, hsla(0, 0%, 100%, 1) 90%);
@@ -156,10 +172,26 @@ background: radial-gradient(circle, rgba(168,207,64,1) 0%, rgba(236,247,245,1) 5
                         </div>
                     </div>
 
-                    <div class="relative flex justify-center items-center bg-cover bg-center rounded-3xl">
-                        <img src="assets/images/Ellipse 12.png" alt="Ellipse"
-                            class="xl:w-[580px] lg:w-[480px] mob-s:w-[360px]  absolute top-16 left-26"
-                            style="z-index: -999;">
+                    <div class="relative flex justify-center items-center rounded-3xl">
+                        <div class="  absolute top-16 left-26" style="z-index: -999;">
+                            <img src="assets/images/Ellipse 12.png" alt="Ellipse"
+                                class="xl:w-[580px] lg:w-[480px] mob-s:w-[360px]">
+                            <div class="absolute lg:w-48 lg:h-14 top-20 lg:top-10 md:top-0 mob-s:-left-5 mob-s:-top-10 mob-s:p-2 -left-20 bg-[#ffffff] lg:p-3 flex items-center justify-center text-center text-highlight text-light rounded-full lg:text-base mob-s:text-xs rounded-2xl"
+                                style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                                <span
+                                    class="bg-[#A8CF45] mob-l:w-8 mob-l:h-8 mob-s:p-1 flex justify-center items-center rounded-full mr-2">
+                                    <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                                </span>
+                                Regular Checkup
+                            </div>
+                            <div class="absolute -top-20 right-10">
+                                <span
+                                    class="mob-l:w-16 mob-l:h-16 bg-[#ffffff] p-3 rounded-full flex items-center justify-center"
+                                    style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                                    <img src="assets/images/health.png" alt="health">
+                                </span>
+                            </div>
+                        </div>
                         <img src="assets/images/doctor-child.png" alt="Doctor with child"
                             class="xl:h-[550px] lg:h-[450px] mob-s:h-[350px] rounded-3xl">
                     </div>
@@ -169,7 +201,7 @@ background: radial-gradient(circle, rgba(168,207,64,1) 0%, rgba(236,247,245,1) 5
                 class="container  xl:container  lg:container  md:container  sm:container mob-s:container mx-auto px-4 flex  justify-between items-center">
                 <!-- Booking Form -->
                 <div
-                    class="absolute lg:-bottom-20 mob-s:-bottom-96  bg-white lg:p-6 mob-s:p-3 rounded-2xl shadow-xl xl:space-y-2 space-y-3 mt-8 2xl:w-[80%] xl:w-[90%] md:w-[97%] mob-s:w-[92%]">
+                    class="absolute lg:-bottom-20 md:-bottom-32 mob-s:-bottom-96  bg-white lg:p-6 mob-s:p-3 rounded-2xl shadow-xl xl:space-y-2 space-y-3 mt-8 2xl:w-[80%] xl:w-[90%] md:w-[97%] mob-s:w-[92%]">
                     <div class="grid lg:grid-cols-5 md:grid-cols-3 mob-s:grid-cols-1 2xl:gap-5">
                         <div class="flex flex-col">
                             <label for="your name" class="lg:text-xl md:text-base pb-2">Name</label>
@@ -197,22 +229,844 @@ background: radial-gradient(circle, rgba(168,207,64,1) 0%, rgba(236,247,245,1) 5
                                 class="sm:w-[85%] px-7 md:py-3 lg:py-5 mob-s:py-2 rounded-full bg-blue-50 border-0 focus:ring-2 focus:ring-blue-500">
                         </div>
                         <button
-                            class="sm:w-[85%] mob-s:w-full lg:h-16 mt-10 md:w-auto px-8 md:py-3 lg:py-5 mob-s:py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors">
+                            class="sm:w-[85%] mob-s:w-full lg:h-16 mt-10 md:w-auto px-8 md:py-3 lg:py-5 mob-s:py-2 bg-highlight text-white rounded-full hover:bg-white hover:text-highlight hover:border-2 hover:border-highlight transition-colors">
                             Booking now
                         </button>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="my-28"></div>
+        <div class="md:my-28 mob-s:my-10 "></div>
         <!-- About Us -->
-        <section class="about-us">
-            <div class="container  xl:container  lg:container  md:container  sm:container mob-s:container  mx-auto flex  justify-between items-center">
-                
+        <section class="relative px-4  overflow-hidden md:mt-44 mob-s:mt-[450px]">
+            <div
+                class="container  xl:container  lg:container  md:container  sm:container mob-s:container mx-auto  px-4">
+                <div class="grid md:grid-cols-2 items-center gap-8">
+                    <!-- Left Content -->
+                    <div class="lg:space-y-8 mob-s:space-y-4">
+                        <span class="text-[#00A0DC] font-medium">About ANAND Hospital</span>
+
+                        <h2
+                            class="xl:text-5xl lg:text-4xl mob-s:text-3xl font-workSans font-semibold text-[#113C4E] leading-normal">
+                            We Are Always Ensure<br>
+                            Best Treatment Your Child
+                        </h2>
+
+                        <p class="text-gray-600 lg:text-lg md:text-sm leading-relaxed max-w-xl">
+                            Anand Children Hospital is one of the largest Pediatric Super Specialty Hospital of South
+                            Gujarat located at the center of the Surat City. It is the 1st Pediatric Hospital in Gujarat
+                        </p>
+
+                        <a href=""
+                            class="inline-block bg-[#00A0DC] text-white px-8 py-3 rounded-full hover:bg-white hover:text-highlight hover:shadow-xl transition-colors">
+                            More About Us..
+                        </a>
+
+                        <!-- Quote Card -->
+                        <div class="mt-8 p-6 bg-white rounded-2xl border flex items-center gap-4 max-w-xl">
+                            <img src="assets/images/doctor-chetan.png" alt="Dr. Chetan B. Shah"
+                                class="w-16 h-16 rounded-full  object-center">
+                            <div>
+                                <p class="text-gray-800 font-medium">
+                                    <span class="text-[#7F7F7F]">"</span>
+                                    <span class="text-[#113C4E]">Healthy Child</span>
+                                    <span class="text-[#7F7F7F]"> is the Best Promise to the Future</span>
+                                    <span class="text-[#7F7F7F]">"</span>
+                                </p>
+                                <p class="text-green-600 text-sm mt-1">- Dr. Chetan B. Shah</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Content - Images -->
+                    <div class="relative">
+                        <!-- Medical emblem -->
+                        <div
+                            class="absolute xl:-left-16 lg:left-0 md:-left-10 top-40 -translate-y-1/2 xl:w-32 xl:h-32 md:w-20 md:h-20 hidden md:block">
+                            <img src="assets/images/iamvector_download.png" alt="fzdgh"
+                                class="w-full h-full object-contain rounded-full" style="backdrop-filter: blur(10px);">
+                        </div>
+                        <div class="absolute xl:-left-4 lg:left-8 mob-s:-left-2 top-3 w-2 h-5">
+                            <span class="border-2 border-highlight "></span>
+                        </div>
+                        <div class="absolute -left-10 bottom-10 ">
+                            <img src="assets/images/waves.png" alt="waves" class="">
+                        </div>
+                        <div class="absolute lg:right-52 mob-s:right-10 top-20 ">
+                            <img src="assets/images/flower.png" alt="flower">
+                        </div>
+                        <div class="absolute  xl:right-16 mob-s:right-10 bottom-[30%] w-2 h-5">
+                            <span class="border-2 border-[#A8CF45] "></span>
+                        </div>
+
+                        <!-- Main images -->
+                        <div class="space-y-8">
+                            <div class=" overflow-hidden xl:ml-0 lg:ml-10">
+                                <img src="assets/images/child-care.png" alt="Child medical examination"
+                                    class="w-1/2 h-44 object-cover rounded-2xl">
+                            </div>
+                            <div class="overflow-hidden xl:ml-32 lg:ml-14 md:ml-10">
+                                <img src="assets/images/family-consultation.png" alt="Family medical consultation"
+                                    class="w-10/12 xl:h-80 object-cover rounded-2xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+        <div class="md:my-28 mob-s:my-10 "></div>
+        <!-- Services  -->
+        <section class="relative px-4 py-12 md:py-16 lg:py-20 overflow-hidden">
+            <!-- Background decoration -->
+            <div
+                class="absolute mob-xl:-left-48 mob-s:-left-20 top-10 mob-xl:w-[600px] mob-s:w-[300px] mob-xl:h-[200px] mob-s:h-[200px] -z-10">
+                <div class="w-full h-full rounded-full opacity-20 transform " style="background: linear-gradient(318.7deg, #0098DA 5.91%, #8fb336 98.27%);
+">
+                </div>
+            </div>
+            <div class="absolute top-56 left-72">
+                <img src="assets/images/Vector.png" alt="vector">
+            </div>
+
+            <div class="container mx-auto">
+                <!-- Header Section -->
+                <div class="grid lg:grid-cols-3 gap-8 mb-12 items-center">
+                    <div class="absolute mob-xl:left-44 mob-s:left-10 mob-xl:top-20 mob-s:top-20">
+                        <span class="text-[#00A0DC] font-medium">Our Facilities</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2 font-workSans">
+                            Latest Technologies<br>
+                            for Your Health
+                        </h2>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div class="text-gray-600 lg:mt-0 mob-s:mt-44">
+                        <p>Anand Children Hospital is one of the largest Pediatric Super Specialty Hospital of South
+                            Gujarat located at the center of the Surat City.</p>
+                        <p class="mt-4">Our mission is "Towards Playful Health & Intact Survival with Humane Touch" for
+                            all.</p>
+                    </div>
+                </div>
+
+                <!-- Main Content Grid -->
+                <div class="grid lg:grid-cols-2 gap-6 lg:gap-8 mt-20">
+                    <!-- Main Image -->
+                    <div class="">
+                        <img src="assets/images/doctor.png" alt="Medical professional in protective equipment"
+                            class="w-full lg:h-[700px] object-cover object-top rounded-2xl">
+                    </div>
+
+                    <!-- Services Grid -->
+                    <div class=" grid sm:grid-cols-2 gap-6">
+                        <!-- Operation Theatre -->
+                        <div class="bg-[rgba(0,152,218,0.0984768907563025)] p-6 rounded-2xl">
+                            <div
+                                class="bg-[rgba(0,152,218,0.19931722689075626)] w-20 h-20 rounded-full flex items-center justify-center mb-4 ml-auto">
+                                <img src="assets/images/operation.png" alt="operation theatre" class="w-12 h-12">
+                            </div>
+                            <h3 class="text-2xl font-bold text-[#0A2472] mb-4 font-workSans">Operation Theatre</h3>
+                            <p class="text-gray-600 mb-4 xl:text-lg md:text-sm tracking-normal">State of the Art
+                                Operation Theatre for
+                                all Pediatric &
+                                Neonatal Surgeries.</p>
+                            <a href="" class=" text-xl font-medium inline-flex items-center group">
+                                Learn More
+                                <img src="assets/images/right-arrow.png" alt="right arrow"
+                                    class="w-10 h-4 ml-2 group-hover:ml-4">
+                            </a>
+                        </div>
+
+                        <!-- Laboratory Department -->
+                        <div class="bg-[rgba(168,207,64,0.10127801120448177)] p-6 rounded-2xl">
+                            <div
+                                class="bg-[rgba(168,207,64,0.21332282913165268)] w-20 h-20 rounded-full flex items-center justify-center mb-4 ml-auto">
+                                <img src="assets/images/laboratory.png" alt="laboratory" class="w-12 h-12">
+                            </div>
+                            <h3 class="text-2xl font-bold text-[#0A2472] mb-4 font-workSans">Laboratory Department</h3>
+                            <p class="text-gray-600 mb-4 xl:text-lg md:text-sm tracking-normal">State of the Art
+                                Operation Theatre for
+                                all Pediatric &
+                                Neonatal Surgeries.</p>
+                            <a href="" class=" text-xl font-medium inline-flex items-center group">
+                                Learn More
+                                <img src="assets/images/right-arrow.png" alt="right arrow"
+                                    class="w-10 h-4 ml-2 group-hover:ml-4">
+                            </a>
+                        </div>
+
+                        <!-- OPD & Ward -->
+                        <div class="bg-[rgba(168,207,64,0.10127801120448177)] p-6 rounded-2xl">
+                            <div
+                                class="bg-[rgba(168,207,64,0.21332282913165268)] w-20 h-20 rounded-full flex items-center justify-center mb-4 ml-auto">
+                                <img src="assets/images/opd&word.png" alt="opd&word.png" class="w-12 h-12">
+                            </div>
+                            <h3 class="text-2xl font-bold text-[#0A2472] mb-4 font-workSans">OPD & Ward</h3>
+                            <p class="text-gray-600 mb-4 xl:text-lg md:text-sm tracking-normal">State of the Art
+                                Operation Theatre for
+                                all Pediatric &
+                                Neonatal Surgeries.</p>
+                            <a href="" class=" text-xl font-medium inline-flex items-center group">
+                                Learn More
+                                <img src="assets/images/right-arrow.png" alt="right arrow"
+                                    class="w-10 h-4 ml-2 group-hover:ml-4">
+                            </a>
+                        </div>
+
+                        <!-- NICU/PICU -->
+                        <div class="bg-[rgba(0,152,218,0.0984768907563025)] p-6 rounded-2xl">
+                            <div
+                                class="bg-[rgba(0,152,218,0.19931722689075626)] w-20 h-20 rounded-full flex items-center justify-center mb-4 ml-auto">
+                                <img src="assets/images/nicu.png" alt="nicu.png" class="w-12 h-12">
+                            </div>
+                            <h3 class="text-2xl font-bold text-[#0A2472] mb-4 font-workSans">NICU / PICU</h3>
+                            <p class="text-gray-600 mb-4 xl:text-lg md:text-sm tracking-normal">State of the Art
+                                Operation Theatre for
+                                all Pediatric &
+                                Neonatal Surgeries.</p>
+                            <a href="" class=" text-xl font-medium inline-flex items-center group">
+                                Learn More
+                                <img src="assets/images/right-arrow.png" alt="right arrow"
+                                    class="w-10 h-4 ml-2 group-hover:ml-4">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="md:my-28 mob-s:my-10"></div>
+        <!-- Marquee Top -->
+        <div class="overflow-hidden whitespace-nowrap" style="background: linear-gradient(318.7deg, #0098DA 4.91%, #A8CF45 90.27%);
+">
+            <div class="animate-scroll inline-flex">
+                <div class="inline-flex items-center py-2 space-x-4">
+                    <span class="text-white flex items-center">
+                        Pediatric Dentistry
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <span class="text-white flex items-center">
+                        Pediatric Physiotherapy
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <!-- Repeat items for continuous scroll -->
+                    <span class="text-white flex items-center">
+                        Radiology Department
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <span class="text-white flex items-center">
+                        ENT Department
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <span class="text-white flex items-center">
+                        Cashless Facilities
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <span class="text-white flex items-center">
+                        Pediatric Dentistry
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <span class="text-white flex items-center">
+                        Pediatric Physiotherapy
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <!-- Repeat items for continuous scroll -->
+                    <span class="text-white flex items-center">
+                        Radiology Department
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <span class="text-white flex items-center">
+                        ENT Department
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <span class="text-white flex items-center">
+                        Cashless Facilities
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- counter Section -->
+        <section class="bg-black py-20">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center justify-center"
+                    id="counter">
+                    <!-- Pediatrician -->
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-[#1B3B1B] rounded-full w-20 h-28 p-4 flex items-center justify-center">
+                            <img src="assets/images/user.png" alt="user" class="w-14">
+                        </div>
+                        <div>
+                            <div class="text-[#4CAF50] text-5xl font-bold inline-block" data-count="48">0 </div><span
+                                class="text-3xl text-[#4CAF50]">+</span>
+                            <div class="text-white text-xl">Pediatrician</div>
+                        </div>
+                    </div>
+
+                    <!-- Medical Staff -->
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-[#1B3B1B] rounded-full w-20 h-28 p-4 flex items-center justify-center">
+                            <img src="assets/images/lbo.png" alt="laboratory" class="w-14">
+                        </div>
+                        <div>
+                            <div class="text-[#4CAF50] text-5xl font-bold inline-block" data-count="120">0 </div><span
+                                class="text-3xl text-[#4CAF50]">+</span>
+                            <div class="text-white text-xl">Medical Stuff</div>
+                        </div>
+                    </div>
+
+                    <!-- Pediatra Polyclinic -->
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-[#1B3B1B] rounded-full w-20 h-28 p-4 flex items-center justify-center">
+                            <img src="assets/images/building-4.png" alt="building-4.png" class="w-14">
+                        </div>
+                        <div>
+                            <div class="text-[#4CAF50] text-5xl font-bold inline-block" data-count="92">0 </div><span
+                                class="text-3xl text-[#4CAF50]">+</span>
+                            <div class="text-white text-xl">Pediatra Polyclinic</div>
+                        </div>
+                    </div>
+
+                    <!-- Safe Observation -->
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-[#1B3B1B] rounded-full w-20 h-28 p-4 flex items-center justify-center">
+                            <img src="assets/images/Frame.png" alt="Frame.png" class="w-10">
+                        </div>
+                        <div>
+                            <div class="text-[#4CAF50] text-5xl font-bold inline-block" data-count="231">0 </div><span
+                                class="text-3xl text-[#4CAF50]">+</span>
+                            <div class="text-white text-xl">Safe Observation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Marquee Bottom - Same as Top -->
+        <div class="overflow-hidden whitespace-nowrap"
+            style="background: linear-gradient(318.7deg, #0098DA 4.91%, #A8CF45 90.27%);">
+            <div class="animate-scroll inline-flex">
+                <div class="inline-flex items-center py-2 space-x-4">
+                    <span class="text-white flex items-center">
+                        Pediatric Dentistry
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <span class="text-white flex items-center">
+                        Pediatric Physiotherapy
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <!-- Repeat items for continuous scroll -->
+                    <span class="text-white flex items-center">
+                        Radiology Department
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <span class="text-white flex items-center">
+                        ENT Department
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <span class="text-white flex items-center">
+                        Cashless Facilities
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <span class="text-white flex items-center">
+                        Pediatric Dentistry
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <span class="text-white flex items-center">
+                        Pediatric Physiotherapy
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <!-- Repeat items for continuous scroll -->
+                    <span class="text-white flex items-center">
+                        Radiology Department
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <span class="text-white flex items-center">
+                        ENT Department
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                    <span class="text-white flex items-center">
+                        Cashless Facilities
+                        <img src="assets/images/Subtract.png" alt="subtract" class="w-4 h-4 mx-3">
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="md:my-28 mob-s:my-10"></div>
+        <!-- Schedule -->
+        <section class="relative px-4 py-12 md:py-16 lg:py-20 overflow-hidden">
+            <!-- wave -->
+            <div class="absolute -top-10 left-0 w-full z-10 md:block mob-s:hidden">
+                <img src="assets/images/bg.png" alt="wave" class="w-full">
+            </div>
+            <div class="container mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-end">
+                    <!-- Left side - Doctor Image -->
+                    <div class="relative">
+                        <div
+                            class="bg-gradient-to-br from-[#E8F4D9] via-[#B2E7D7] to-[#B9E6FE] w-full mob-xl:h-96 mob-s:h-60 rounded-3xl p-6">
+                            <div class="absolute bottom-0 mob-xl:left-20 mob-s:left-10 z-20">
+                                <img src="assets/images/doctor-1.png" alt="Doctor with clipboard"
+                                    class="mob-xl:w-96 mob-s:w-52 h-auto rounded-2xl">
+                            </div>
+                            <!-- 24 Hours Service Badge -->
+                            <div class="absolute lg:w-48 lg:h-14 top-20 lg:top-10 md:top-0 mob-s:-right-5 mob-s:-top-10 mob-s:p-2 z-20 -right-20 bg-[#ffffff] lg:p-3 flex items-center justify-center text-center text-highlight text-light rounded-full lg:text-base mob-s:text-xs rounded-2xl"
+                                style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                                <span
+                                    class="bg-[#A8CF45] mob-l:w-8 mob-l:h-8 mob-s:p-1 flex justify-center items-center rounded-full mr-2">
+                                    <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                                </span>
+                                Regular Checkup
+                            </div>
+                            <!-- vector -->
+                            <div class="absolute -top-10 left-10">
+                                <img src="assets/images/Vector (1).png" alt="vector">
+                            </div>
+                            <!-- capsule -->
+                            <div class="absolute bottom-32 -right-5 lg:block mob-s:hidden">
+                                <img src="assets/images/capsule.png" alt="capsule">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right side - Schedule -->
+                    <div class="space-y-6  z-20">
+                        <div>
+                            <span class="text-[#00A0DC] font-medium">Emergency Situation</span>
+                            <h2 class="lg:text-4xl mob-s:text-3xl font-bold text-primary mt-2 font-workSans">
+                                Doctor's Schedule Day
+                            </h2>
+                        </div>
+
+                        <p class="text-gray-600 lg:text-lg mob-s:text-sm">
+                            Anand Children Hospital is one of the largest Pediatric Super Specialty Hospital of South
+                            Gujarat located at the center of the Surat City. It is the 1st Pediatric Hospital in Gujarat
+                        </p>
+
+                        <!-- Schedule List -->
+                        <div class="lg:space-y-4">
+                            <div class="flex  items-center py-2">
+                                <span class="text-[#9CCD65] font-medium">08.00 AM - 12.00 PM</span>
+                                <span class="ml-auto text-left text-gray-800">Dr. Sachin A. Shah</span>
+                            </div>
+                            <div class="flex  items-center py-2">
+                                <span class="text-[#9CCD65] font-medium">12.00 PM - 03.00 PM</span>
+                                <span class="ml-auto text-left text-gray-800">Dr. Sachin A. Shah</span>
+                            </div>
+                            <div class="flex  items-center py-2">
+                                <span class="text-[#9CCD65] font-medium">03.00 PM - 07.00 PM</span>
+                                <span class="ml-auto text-left text-gray-800">Dr. Pratik A. Shah</span>
+                            </div>
+                            <div class="flex  items-center py-2">
+                                <span class="text-[#9CCD65] font-medium">07.00 PM - 11.00 PM</span>
+                                <span class="ml-auto text-left text-gray-800">Dr. Neeta C. Shah</span>
+                            </div>
+                        </div>
+
+                        <!-- Chat Button -->
+                        <button
+                            class="inline-block bg-[#00A0DC] text-white px-8 py-3 rounded-full hover:bg-white hover:text-highlight hover:shadow-xl transition-colors">
+                            Chat with doctor..
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="md:my-28 mob-s:my-10"></div>
+        <!-- specialists -->
+        <section class="relative overflow-hidden">
+            <!-- Header -->
+            <div class="text-center mob-xl:mb-28 mob-s:mb-10">
+                <span class="text-[#00A0DC] font-medium">Emergency Situation</span>
+                <h2 class="text-5xl font-bold text-primary mt-2 font-workSans">
+                    Meet Our Specialists
+                </h2>
+                <p class="text-gray-500 mt-10 max-w-2xl mx-auto">
+                    A Big & Dedicated Team of Experienced Pediatricians to provide Quality Healthcare.
+                </p>
+            </div>
+            <div class="grid relative">
+                <!-- Specialist Card -->
+                <div
+                    class="grid xl:grid-cols-5 mob-xl:grid-cols-4 mob-s:grid-cols-3 md:space-x-0 mob-s:space-x-3  md:static mob-s:absolute">
+                    <!-- Specialist 1 -->
+                    <div class="flex flex-col items-center justify-center rounded-full">
+                        <img src="assets/images/doctor-2.png" alt="doctor-2"
+                            style="box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;"
+                            class="md:w-[200px] mob-s:w-[100px] md:h-[200px] mob-s:h-[100px] object-cover rounded-full border-4 border-white">
+                        <div class="text-center mt-4">
+                            <p class="md:text-xl mob-s:text-sm font-medium">
+                                Dr. Kashmira Solanki
+                            </p>
+                            <span class="text-gray-500 md:text-base mob-s:text-xs">
+                                Neonatologist
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center justify-end rounded-full">
+                        <img src="assets/images/doctor-3.png" alt="doctor-2"
+                            style="box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;"
+                            class="md:w-[100px] mob-s:w-[50px] md:h-[100px] mob-s:h-[50px] object-cover rounded-full border-2 border-white">
+                        <div class="text-center mt-4">
+                            <p class="md:text-xl mob-s:text-sm font-medium">
+                                Dr. Pratik Shah
+                            </p>
+                            <span class="text-gray-500 md:text-base mob-s:text-xs">
+                                Pediatric Intensivist
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center justify-start rounded-full mb-24">
+                        <img src="assets/images/doctor-4.png" alt="doctor-4"
+                            style="box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;"
+                            class="md:w-[150px] mob-s:w-[100px] md:h-[150px] mob-s:h-[100px] object-cover rounded-full border-4 border-white">
+                        <div class="text-center mt-4">
+                            <p class="md:text-xl mob-s:text-sm font-medium">
+                                Dr. Sachin A. Shah
+                            </p>
+                            <span class="text-gray-500 md:text-base mob-s:text-xs">
+                                Neonatologist
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mob-s:hidden xl:block"></div>
+                    <div
+                        class="flex flex-col items-center justify-end rounded-full absolute top-72 right-[25%] mob-s:hidden xl:flex">
+                        <img src="assets/images/doctor-8.png" alt="doctor-8"
+                            style="box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;"
+                            class="w-[100px] h-[100px] object-cover rounded-full border-2 border-white">
+                        <div class="text-center mt-4">
+                            <p class="text-xl font-medium">
+                                Dr Silky Modi
+                            </p>
+                            <span class="text-gray-500">
+                                Child Specialist
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-end rounded-full mt-10 md:ml-0 mob-s:hidden mob-xl:flex">
+                        <img src="assets/images/doctor-5.png" alt="doctor-5"
+                            style="box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;"
+                            class="md:w-[150px] mob-s:w-[100px] md:h-[150px] mob-s:h-[100px] object-cover rounded-full border-2 border-white">
+                        <div class="text-center mt-4">
+                            <p class="md:text-xl mob-s:text-sm font-medium">
+                                Dr Neeta C. Shah
+                            </p>
+                            <span class="text-gray-500 md:text-base mob-s:text-xs">
+                                Chief Pathologist
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid mob-xl:grid-cols-3 mob-s:grid-cols-2 relative mob-s:mt-60 md:mt-0 absolute">
+                    <!-- Specialist 1 -->
+                    <div
+                        class="flex flex-col sm:items-center sm:justify-end mob-s:items-start mob-s:justify-center rounded-full sm:mt-24 mob-s:hidden mob-xl:flex">
+                        <img src="assets/images/doctor-6.png" alt="doctor-6"
+                            style="box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;"
+                            class="sm:w-[150px] sm:h-[150px] mob-s:w-[100px] mob-s:h-[100px] object-cover rounded-full border-4 border-white">
+                        <div class="text-center mt-4">
+                            <p class="md:text-xl mob-s:text-sm font-medium">
+                                Dr. Devarshi Patel
+                            </p>
+                            <span class="text-gray-500 md:text-base mob-s:text-xs">
+                                Child Specialist
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:items-center mob-s:items-end justify-end rounded-full mt-24">
+                        <img src="assets/images/doctor-chetan.png" alt="doctor-chetan.png"
+                            style="box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;"
+                            class="lg:w-[300px] lg:h-[300px] sm:w-[200px] sm:h-[200px] mob-s:w-[150px] mob-s:h-[150px] object-cover rounded-full border-4 border-white">
+                        <div class="text-center mt-4">
+                            <p class="md:text-xl mob-s:text-sm font-medium">
+                                Dr. Chetan B. Shah
+                            </p>
+                            <span class="text-gray-500 md:text-base mob-s:text-xs">
+                                MD (Pediatrics), DCH
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col md:items-end md:justify-end mob-s:items-center mob-s:justify-center rounded-full md:mr-10">
+                        <img src="assets/images/doctor-7.png" alt="doctor-7"
+                            style="box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;"
+                            class="lg:w-[200px] lg:h-[200px] sm:w-[150px] sm:h-[150px] mob-s:w-[100px] mob-s:h-[100px] object-cover rounded-full border-2 border-white">
+                        <div class="text-center mt-4">
+                            <p class="md:text-xl mob-s:text-sm font-medium">
+                                Dr. Charul Bhutwala
+                            </p>
+                            <span class="text-gray-500 md:text-base mob-s:text-xs">
+                                Child Specialist
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute top-0 left-0 rounded-full mob-s:hidden xl:flex">
+                <img src="assets/images/Ellipse 9.png" alt="vector" class="w-full h-full">
+            </div>
+            <div class="absolute top-96 right-[25%] rounded-full mob-s:hidden xl:flex">
+                <img src="assets/images/Ellipse 10.png" alt="vector" class="w-full h-[600px]">
+            </div>
+            <div class="absolute top-[60%] right-[20%] rounded-full">
+                <img src="assets/images/vector-1.png" alt="vector" class="">
+            </div>
+            <div class="absolute top-[70%] left-[30%] rounded-full">
+                <img src="assets/images/vector-2.png" alt="vector" class="">
+            </div>
+        </section>
+        <div class="md:my-28 mob-s:my-10"></div>
+        <!-- Testimonials -->
+        <section class="bg-black  md:py-28 mob-s:py-10 relative h-[1150px] overflow-hidden">
+            <div class="absolute -top-10 left-0 w-full md:block mob-s:hidden">
+                <img src="assets/images/bg-1.png" alt="bg-1" class="w-full">
+            </div>
+            <div class="absolute -top-20">
+                <img src="assets/images/Ellipse 9.png" alt="Ellipse">
+            </div>
+            <div class="absolute -top-20 right-0">
+                <img src="assets/images/Ellipse 10.png" alt="Ellipse">
+            </div>
+            <div
+                class="container  xl:container  lg:container  md:container  sm:container mob-s:container  mx-auto  px-4">
+                <!-- Header -->
+                <div class="text-center mb-16">
+                    <span class="text-[#00A0DC] font-medium">Emergency Situation</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-2">
+                        What Our Patients Say About Us
+                    </h2>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+                        Our clients send us bunch of healthy smiles with our services and we love them
+                    </p>
+                </div>
+                <div class="relative overflow-hidden">
+                    <div class="absolute top-[60%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
+                        <img src="assets/images/Ellipse 13.png" alt="Ellipse">
+                    </div>
+                    <div class="absolute top-[60%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
+                        <img src="assets/images/Ellipse 12.png" alt="Ellipse">
+                    </div>
+                    <div class="absolute top-[50%] left-[48%] transform -translate-x-1/2 -translate-y-1/2">
+                        <img src="assets/images/doctor-9.png" alt="doctor-9">
+                    </div>
+                    <!-- Slider Content -->
+                    <div class="flex transition-transform duration-500 ease-in-out mb-10" id="testimonial-slider">
+                        <!-- Slide 1 -->
+                        <div class="min-w-full flex flex-col items-center p-6 rounded-lg">
+                            <div class="grid md:grid-cols-2 gap-6 lg:gap-12 items-end">
+                                <div class="relative bg-white w-9/12 h-48 rounded-3xl mt-20 z-50 p-14 ml-10">
+                                    <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
+                                        style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                                        <img src="assets/images/qoutes.png" alt="quote"
+                                            class=" w-20 h-20 rounded-full object-cover">
+                                    </div>
+                                    <p class="text-gray-500">
+                                        “Dr Sachin and his team gave wonderful treatment to my daughter. It is the best
+                                        hospital I ever visited.”
+                                    </p>
+                                    <p class="text-gray-500 mt-6">
+                                        <span class="text-highlight">-Alex Thomas / </span>NICU
+                                    </p>
+                                </div>
+                                <div class="relative bg-white w-9/12 h-48 rounded-3xl mt-20 z-50 p-14 ml-40">
+                                    <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
+                                        style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                                        <img src="assets/images/qoutes-1.png" alt="quote"
+                                            class=" w-20 h-20 rounded-full object-cover">
+                                    </div>
+                                    <p class="text-gray-500">
+                                        “Dr Sachin and his team gave wonderful treatment to my daughter. It is the best
+                                        hospital I ever visited.”
+                                    </p>
+                                    <p class="text-gray-500 mt-6">
+                                        <span class="text-highlight">-Alex Thomas / </span>NICU
+                                    </p>
+                                </div>
+                                <div class="relative bg-white w-8/12 h-48 rounded-3xl mt-28 z-50 p-14 ml-20">
+                                    <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
+                                        style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                                        <img src="assets/images/qoutes-2.png" alt="quote"
+                                            class=" w-20 h-20 rounded-full object-cover">
+                                    </div>
+                                    <p class="text-gray-500">
+                                        “Best hospital in surat. Dr.chetan shah is a good pediatrician doctor for child.
+                                        good service..”
+                                    </p>
+                                    <p class="text-gray-500 mt-6">
+                                        <span class="text-highlight">-Pinal Viral Naik / </span>Hospital
+                                    </p>
+                                </div>
+                                <div class="relative bg-white w-8/12 h-48 rounded-3xl mt-28 z-50 p-14 ml-40">
+                                    <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
+                                        style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                                        <img src="assets/images/qoutes-3.png" alt="quote"
+                                            class=" w-20 h-20 rounded-full object-cover">
+                                    </div>
+                                    <p class="text-gray-500">
+                                        “Best hospital in surat. Dr.chetan shah is a good pediatrician doctor for child.
+                                        good service..”
+                                    </p>
+                                    <p class="text-gray-500 mt-6">
+                                        <span class="text-highlight">-Pinal Viral Naik / </span>Hospital
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="min-w-full flex flex-col items-center p-6 rounded-lg">
+                            <div class="grid md:grid-cols-2 gap-6 lg:gap-12 items-end">
+                                <div class="relative bg-white w-9/12 h-48 rounded-3xl mt-20 z-50 p-14 ml-10">
+                                    <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
+                                        style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                                        <img src="assets/images/qoutes.png" alt="quote"
+                                            class=" w-20 h-20 rounded-full object-cover">
+                                    </div>
+                                    <p class="text-gray-500">
+                                        “Dr Sachin and his team gave wonderful treatment to my daughter. It is the best
+                                        hospital I ever visited.”
+                                    </p>
+                                    <p class="text-gray-500 mt-6">
+                                        <span class="text-highlight">-Alex Thomas / </span>NICU
+                                    </p>
+                                </div>
+                                <div class="relative bg-white w-9/12 h-48 rounded-3xl mt-20 z-50 p-14 ml-40">
+                                    <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
+                                        style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                                        <img src="assets/images/qoutes-1.png" alt="quote"
+                                            class=" w-20 h-20 rounded-full object-cover">
+                                    </div>
+                                    <p class="text-gray-500">
+                                        “Dr Sachin and his team gave wonderful treatment to my daughter. It is the best
+                                        hospital I ever visited.”
+                                    </p>
+                                    <p class="text-gray-500 mt-6">
+                                        <span class="text-highlight">-Alex Thomas / </span>NICU
+                                    </p>
+                                </div>
+                                <div class="relative bg-white w-8/12 h-48 rounded-3xl mt-28 z-50 p-14 ml-20">
+                                    <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
+                                        style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                                        <img src="assets/images/qoutes-2.png" alt="quote"
+                                            class=" w-20 h-20 rounded-full object-cover">
+                                    </div>
+                                    <p class="text-gray-500">
+                                        “Best hospital in surat. Dr.chetan shah is a good pediatrician doctor for child.
+                                        good service..”
+                                    </p>
+                                    <p class="text-gray-500 mt-6">
+                                        <span class="text-highlight">-Pinal Viral Naik / </span>Hospital
+                                    </p>
+                                </div>
+                                <div class="relative bg-white w-8/12 h-48 rounded-3xl mt-28 z-50 p-14 ml-40">
+                                    <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
+                                        style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                                        <img src="assets/images/qoutes-3.png" alt="quote"
+                                            class=" w-20 h-20 rounded-full object-cover">
+                                    </div>
+                                    <p class="text-gray-500">
+                                        “Best hospital in surat. Dr.chetan shah is a good pediatrician doctor for child.
+                                        good service..”
+                                    </p>
+                                    <p class="text-gray-500 mt-6">
+                                        <span class="text-highlight">-Pinal Viral Naik / </span>Hospital
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Navigation Arrows -->
+                    <div class="flex justify-center mt-6">
+                        <button id="prev" class="cursor-pointer">
+                            <img src="assets/images/Arrow-1.png" alt="Arrow 1" class="mr-10 w-10">
+                        </button>
+                        <button id="next" class="cursor-pointer">
+                            <img src="assets/images/Arrow-2.png" alt="Arrow 2" class="w-10">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="md:my-28 mob-s:my-10"></div>
+        <!-- blog -->
+        <section class="">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10">
+                    <h2 class="text-highlight font-medium">Our Blogs</h2>
+                    <h3 class="text-2xl md:text-4xl font-bold text-primary font-workSans">
+                        Don't Wait Until It's Too Late, Read Our Blog Today!
+                    </h3>
+                    <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
+                        A Big & Dedicated Team of Experienced Pediatricians to provide Quality Healthcare.
+                    </p>
+                </div>
+                <div class="relative">
+                    <!-- Swiper Slider -->
+                    <div class="swiper-container">
+                        <!-- Slider -->
+                        <div class="swiper-wrapper">
+                            <!-- Blog Card 1 -->
+                            <div class="swiper-slide w-[350px] bg-white rounded-lg shadow-2xl p-5 pb-10">
+                                <img src="assets/images/blog-1.jpeg" alt="Blog 1" class="rounded-lg mb-4 w-full">
+                                <p class="text-[#A8CF45] font-medium mb-2">June 14, 2017</p>
+                                <h4 class="text-xl font-medium text-primary mb-2">
+                                    Very important immunizations for children at the age of 12
+                                </h4>
+                                <a href="" class="text-highlight font-medium">Read More..</a>
+                            </div>
+                            <!-- Blog Card 2 -->
+                            <div class="swiper-slide w-[350px] bg-white rounded-lg shadow-lg p-5 pb-10">
+                                <img src="assets/images/blog-1.jpeg" alt="Blog 1" class="rounded-lg mb-4 w-full">
+                                <p class="text-[#A8CF45] font-medium mb-2">June 14, 2017</p>
+                                <h4 class="text-xl font-medium text-primary mb-2">
+                                    Very important immunizations for children at the age of 12
+                                </h4>
+                                <a href="" class="text-highlight font-medium">Read More..</a>
+                            </div>
+                            <!-- Blog Card 3 -->
+                            <div class="swiper-slide w-[350px] bg-white rounded-lg shadow-lg p-5 pb-10">
+                                <img src="assets/images/blog-1.jpeg" alt="Blog 1" class="rounded-lg mb-4 w-full">
+                                <p class="text-[#A8CF45] font-medium mb-2">June 14, 2017</p>
+                                <h4 class="text-xl font-medium text-primary mb-2">
+                                    Very important immunizations for children at the age of 12
+                                </h4>
+                                <a href="" class="text-highlight font-medium">Read More..</a>
+                            </div>
+                            <!-- Blog Card 4 -->
+                            <div class="swiper-slide w-[350px] bg-white rounded-lg shadow-lg p-5 pb-10">
+                                <img src="assets/images/blog-1.jpeg" alt="Blog 1" class="rounded-lg mb-4 w-full">
+                                <p class="text-[#A8CF45] font-medium mb-2">June 14, 2017</p>
+                                <h4 class="text-xl font-medium text-primary mb-2">
+                                    Very important immunizations for children at the age of 12
+                                </h4>
+                                <a href="" class="text-highlight font-medium">Read More..</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:my-28 mob-s:my-10"></div>
+        </section>
+        
     </main>
     <script src="js/mobile-toggle.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        var swiper = new Swiper('.swiper-container', {
+            loop: true, // Infinite loop
+            slidesPerView: 'auto', // Show as many slides as possible based on the container width
+            spaceBetween: 30, // Space between slides
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true, // Enable pagination clicks
+            },
+            navigation: {
+                nextEl: '.swiper-button-next', // Next button (optional)
+                prevEl: '.swiper-button-prev', // Prev button (optional)
+            },
+        });
+    </script>
 </body>
 
 </html>
