@@ -54,6 +54,24 @@
         .animate-scroll {
             animation: scroll 10s linear infinite reverse;
         }
+
+        .swiper-container {
+            padding: 20px 0;
+        }
+
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #A8CF45 0%, #00AEEF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
 
@@ -76,7 +94,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">About Us</a>
+                        <a href="about-us.html" class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">About Us</a>
                     </li>
                     <li>
                         <a href="" class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">Services</a>
@@ -102,15 +120,15 @@
                 </a>
             </div>
             <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="block md:hidden bg-highlight p-1 focus:outline-none">
-                <img src="assets/images/menu.png" alt="menu" class="mob-s:w-5">
+            <button id="menu-btn" class="block md:hidden p-1 focus:outline-none">
+                <img src="assets/images/menu.png" alt="menu" class="mob-s:w-6">
             </button>
 
             <!-- Mobile Menu -->
             <div id="mobile-menu"
                 class="hidden sm:hidden p-2 bg-white text-center text-black absolute top-full left-0 w-full shadow-lg z-50">
                 <a href="home.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
-                <a href="" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+                <a href="about-us.html" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
                 <a href="" class="block px-4 py-2 hover:bg-gray-100">Services</a>
                 <a href="" class="block px-4 py-2 hover:bg-gray-100">Appointment</a>
                 <a href="" class="block px-4 py-2 hover:bg-gray-100">Blogs</a>
@@ -353,7 +371,7 @@ background: radial-gradient(circle, rgba(168,207,64,1) 0%, rgba(236,247,245,1) 5
                     <!-- Main Image -->
                     <div class="">
                         <img src="assets/images/doctor.png" alt="Medical professional in protective equipment"
-                            class="w-full lg:h-[700px] object-cover object-top rounded-2xl">
+                            class="w-full lg:h-[700px] md:h-[500px] object-cover object-top rounded-2xl">
                     </div>
 
                     <!-- Services Grid -->
@@ -669,9 +687,9 @@ background: radial-gradient(circle, rgba(168,207,64,1) 0%, rgba(236,247,245,1) 5
                 </div>
             </div>
         </section>
-        <div class="md:my-28 mob-s:my-10"></div>
         <!-- specialists -->
         <section class="relative overflow-hidden">
+            <div class="md:my-28 mob-s:my-10"></div>
             <!-- Header -->
             <div class="text-center mob-xl:mb-28 mob-s:mb-10">
                 <span class="text-[#00A0DC] font-medium">Emergency Situation</span>
@@ -805,7 +823,7 @@ background: radial-gradient(circle, rgba(168,207,64,1) 0%, rgba(236,247,245,1) 5
                 <img src="assets/images/Ellipse 9.png" alt="vector" class="w-full h-full">
             </div>
             <div class="absolute top-96 right-[25%] rounded-full mob-s:hidden xl:flex">
-                <img src="assets/images/Ellipse 10.png" alt="vector" class="w-full h-[600px]">
+                <img src="assets/images/Ellipse 10 (1).png" alt="vector" class="w-full h-[600px]">
             </div>
             <div class="absolute top-[60%] right-[20%] rounded-full">
                 <img src="assets/images/vector-1.png" alt="vector" class="">
@@ -813,23 +831,25 @@ background: radial-gradient(circle, rgba(168,207,64,1) 0%, rgba(236,247,245,1) 5
             <div class="absolute top-[70%] left-[30%] rounded-full">
                 <img src="assets/images/vector-2.png" alt="vector" class="">
             </div>
+            <div class="md:my-28 mob-s:my-10"></div>
         </section>
-        <div class="md:my-28 mob-s:my-10"></div>
         <!-- Testimonials -->
-        <section class="bg-black  md:py-28 mob-s:py-10 relative h-[1150px] overflow-hidden">
-            <div class="absolute -top-10 left-0 w-full md:block mob-s:hidden">
-                <img src="assets/images/bg-1.png" alt="bg-1" class="w-full">
+        <section
+            class="bg-black  md:py-28 mob-s:py-10 relative lg:h-[1150px] md:h-[1000px] mob-s:h-[800px] overflow-hidden">
+            <div class="absolute -top-10 left-0 w-full">
+                <img src="assets/images/bg-1.png" alt="bg-1"
+                    class="w-full lg:h-[1150px] md:h-[1000px] mob-s:h-[800px] object-cover">
             </div>
             <div class="absolute -top-20">
                 <img src="assets/images/Ellipse 9.png" alt="Ellipse">
             </div>
             <div class="absolute -top-20 right-0">
-                <img src="assets/images/Ellipse 10.png" alt="Ellipse">
+                <img src="assets/images/Ellipse 10 (1).png" alt="Ellipse">
             </div>
             <div
                 class="container  xl:container  lg:container  md:container  sm:container mob-s:container  mx-auto  px-4">
                 <!-- Header -->
-                <div class="text-center mb-16">
+                <div class="text-center lg:mb-16 sm:mb-10">
                     <span class="text-[#00A0DC] font-medium">Emergency Situation</span>
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-2">
                         What Our Patients Say About Us
@@ -839,142 +859,181 @@ background: radial-gradient(circle, rgba(168,207,64,1) 0%, rgba(236,247,245,1) 5
                     </p>
                 </div>
                 <div class="relative overflow-hidden">
-                    <div class="absolute top-[60%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
+                    <div
+                        class="absolute lg:top-[60%] sm:top-[50%] mob-s:top-[35%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
                         <img src="assets/images/Ellipse 13.png" alt="Ellipse">
                     </div>
-                    <div class="absolute top-[60%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
+                    <div
+                        class="absolute lg:top-[60%] sm:top-[50%] mob-s:top-[35%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
                         <img src="assets/images/Ellipse 12.png" alt="Ellipse">
                     </div>
-                    <div class="absolute top-[50%] left-[48%] transform -translate-x-1/2 -translate-y-1/2">
+                    <div
+                        class="absolute lg:top-[50%] sm:top-[40%] mob-s:top-[25%] left-[48%] transform -translate-x-1/2 -translate-y-1/2">
                         <img src="assets/images/doctor-9.png" alt="doctor-9">
                     </div>
                     <!-- Slider Content -->
                     <div class="flex transition-transform duration-500 ease-in-out mb-10" id="testimonial-slider">
                         <!-- Slide 1 -->
                         <div class="min-w-full flex flex-col items-center p-6 rounded-lg">
-                            <div class="grid md:grid-cols-2 gap-6 lg:gap-12 items-end">
-                                <div class="relative bg-white w-9/12 h-48 rounded-3xl mt-20 z-50 p-14 ml-10">
+                            <div class="md:grid mob-s:hidden md:grid-cols-2 gap-6 lg:gap-12 items-end">
+                                <div
+                                    class="mob-s:hidden md:block relative bg-white xl:w-9/12 lg:w-8/12 xl:h-48 lg:h-44 mob-s:w-8/12 mob-s:h-36 rounded-3xl mt-20 z-50 xl:p-14 lg:p-9 mob-s:p-5 lg:ml-10">
                                     <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
                                         style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
                                         <img src="assets/images/qoutes.png" alt="quote"
-                                            class=" w-20 h-20 rounded-full object-cover">
+                                            class="xl:w-20 xl:h-20 md:w-14 md:h-14 rounded-full object-cover">
                                     </div>
-                                    <p class="text-gray-500">
+                                    <p class="text-gray-500 xl:text-base lg:text-sm mob-s:text-xs">
                                         “Dr Sachin and his team gave wonderful treatment to my daughter. It is the best
                                         hospital I ever visited.”
                                     </p>
-                                    <p class="text-gray-500 mt-6">
+                                    <p class="text-gray-500 xl:mt-6 md:mt-4 xl:text-base lg:text-sm mob-s:text-xs">
                                         <span class="text-highlight">-Alex Thomas / </span>NICU
                                     </p>
                                 </div>
-                                <div class="relative bg-white w-9/12 h-48 rounded-3xl mt-20 z-50 p-14 ml-40">
+                                <div
+                                    class="mob-s:hidden md:block relative bg-white xl:w-9/12 lg:w-8/12 xl:h-48 lg:h-44 mob-s:w-8/12 mob-s:h-36 rounded-3xl mt-20 z-50 xl:p-14 lg:p-9  mob-s:p-5 xl:ml-40 lg:ml-32 md:ml-auto">
                                     <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
                                         style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
                                         <img src="assets/images/qoutes-1.png" alt="quote"
-                                            class=" w-20 h-20 rounded-full object-cover">
+                                            class="xl:w-20 xl:h-20 md:w-14 md:h-14 rounded-full object-cover">
                                     </div>
-                                    <p class="text-gray-500">
+                                    <p class="text-gray-500 xl:text-base lg:text-sm mob-s:text-xs">
                                         “Dr Sachin and his team gave wonderful treatment to my daughter. It is the best
                                         hospital I ever visited.”
                                     </p>
-                                    <p class="text-gray-500 mt-6">
+                                    <p class="text-gray-500 xl:mt-6 md:mt-4 xl:text-base lg:text-sm mob-s:text-xs">
                                         <span class="text-highlight">-Alex Thomas / </span>NICU
                                     </p>
                                 </div>
-                                <div class="relative bg-white w-8/12 h-48 rounded-3xl mt-28 z-50 p-14 ml-20">
+                                <div
+                                    class="mob-s:hidden md:block relative bg-white xl:w-8/12 lg:w-7/12 xl:h-48 lg:h-44 sm:w-7/12 sm:h-36 rounded-3xl mt-28 z-50 xl:p-14 lg:p-8 mob-s:p-5 xl:ml-20 lg:ml-10">
                                     <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
                                         style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
                                         <img src="assets/images/qoutes-2.png" alt="quote"
-                                            class=" w-20 h-20 rounded-full object-cover">
+                                            class="xl:w-20 xl:h-20 md:w-14 md:h-14 rounded-full object-cover">
                                     </div>
-                                    <p class="text-gray-500">
+                                    <p class="text-gray-500 xl:text-base lg:text-sm mob-s:text-xs">
                                         “Best hospital in surat. Dr.chetan shah is a good pediatrician doctor for child.
                                         good service..”
                                     </p>
-                                    <p class="text-gray-500 mt-6">
+                                    <p class="text-gray-500 xl:mt-6 md:mt-4 xl:text-base lg:text-sm mob-s:text-xs">
                                         <span class="text-highlight">-Pinal Viral Naik / </span>Hospital
                                     </p>
                                 </div>
-                                <div class="relative bg-white w-8/12 h-48 rounded-3xl mt-28 z-50 p-14 ml-40">
+                                <div
+                                    class="mob-s:hidden md:block relative bg-white xl:w-8/12 lg:w-7/12 xl:h-48 lg:h-44 sm:w-7/12 sm:h-36 rounded-3xl mt-28 z-50 xl:p-14 lg:p-8 mob-s:p-5 xl:ml-40 lg:ml-48 md:ml-auto">
                                     <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
                                         style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
                                         <img src="assets/images/qoutes-3.png" alt="quote"
-                                            class=" w-20 h-20 rounded-full object-cover">
+                                            class="xl:w-20 xl:h-20 md:w-14 md:h-14 rounded-full object-cover">
                                     </div>
-                                    <p class="text-gray-500">
+                                    <p class="text-gray-500 xl:text-base lg:text-sm mob-s:text-xs">
                                         “Best hospital in surat. Dr.chetan shah is a good pediatrician doctor for child.
                                         good service..”
                                     </p>
-                                    <p class="text-gray-500 mt-6">
+                                    <p class="text-gray-500 xl:mt-6 md:mt-4 xl:text-base lg:text-sm mob-s:text-xs">
                                         <span class="text-highlight">-Pinal Viral Naik / </span>Hospital
                                     </p>
                                 </div>
+                            </div>
+                            <div class="mob-s:block md:hidden relative h-40 bg-white rounded-3xl mt-72 z-50 p-6">
+                                <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
+                                    style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                                    <img src="assets/images/qoutes.png" alt="quote"
+                                        class="w-14 h-14 rounded-full object-cover">
+                                </div>
+                                <p class="text-gray-500">
+                                    “Dr Sachin and his team gave wonderful treatment to my daughter. It is the best
+                                    hospital I ever visited.”
+                                </p>
+                                <p class="text-gray-500 mt-4">
+                                    <span class="text-highlight">-Alex Thomas / </span>NICU
+                                </p>
                             </div>
                         </div>
                         <!-- Slide 2 -->
                         <div class="min-w-full flex flex-col items-center p-6 rounded-lg">
-                            <div class="grid md:grid-cols-2 gap-6 lg:gap-12 items-end">
-                                <div class="relative bg-white w-9/12 h-48 rounded-3xl mt-20 z-50 p-14 ml-10">
+                            <div class="md:grid mob-s:hidden md:grid-cols-2 gap-6 lg:gap-12 items-end">
+                                <div
+                                    class="mob-s:hidden md:block relative bg-white xl:w-9/12 lg:w-8/12 xl:h-48 lg:h-44 mob-s:w-8/12 mob-s:h-36 rounded-3xl mt-20 z-50 xl:p-14 lg:p-9 mob-s:p-5 lg:ml-10">
                                     <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
                                         style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
                                         <img src="assets/images/qoutes.png" alt="quote"
-                                            class=" w-20 h-20 rounded-full object-cover">
+                                            class="xl:w-20 xl:h-20 md:w-14 md:h-14 rounded-full object-cover">
                                     </div>
-                                    <p class="text-gray-500">
+                                    <p class="text-gray-500 xl:text-base lg:text-sm mob-s:text-xs">
                                         “Dr Sachin and his team gave wonderful treatment to my daughter. It is the best
                                         hospital I ever visited.”
                                     </p>
-                                    <p class="text-gray-500 mt-6">
+                                    <p class="text-gray-500 xl:mt-6 md:mt-4 xl:text-base lg:text-sm mob-s:text-xs">
                                         <span class="text-highlight">-Alex Thomas / </span>NICU
                                     </p>
                                 </div>
-                                <div class="relative bg-white w-9/12 h-48 rounded-3xl mt-20 z-50 p-14 ml-40">
+                                <div
+                                    class="mob-s:hidden md:block relative bg-white xl:w-9/12 lg:w-8/12 xl:h-48 lg:h-44 mob-s:w-8/12 mob-s:h-36 rounded-3xl mt-20 z-50 xl:p-14 lg:p-9  mob-s:p-5 xl:ml-40 lg:ml-32 md:ml-auto">
                                     <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
                                         style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
                                         <img src="assets/images/qoutes-1.png" alt="quote"
-                                            class=" w-20 h-20 rounded-full object-cover">
+                                            class="xl:w-20 xl:h-20 md:w-14 md:h-14 rounded-full object-cover">
                                     </div>
-                                    <p class="text-gray-500">
+                                    <p class="text-gray-500 xl:text-base lg:text-sm mob-s:text-xs">
                                         “Dr Sachin and his team gave wonderful treatment to my daughter. It is the best
                                         hospital I ever visited.”
                                     </p>
-                                    <p class="text-gray-500 mt-6">
+                                    <p class="text-gray-500 xl:mt-6 md:mt-4 xl:text-base lg:text-sm mob-s:text-xs">
                                         <span class="text-highlight">-Alex Thomas / </span>NICU
                                     </p>
                                 </div>
-                                <div class="relative bg-white w-8/12 h-48 rounded-3xl mt-28 z-50 p-14 ml-20">
+                                <div
+                                    class="mob-s:hidden md:block relative bg-white xl:w-8/12 lg:w-7/12 xl:h-48 lg:h-44 sm:w-7/12 sm:h-36 rounded-3xl mt-28 z-50 xl:p-14 lg:p-8 mob-s:p-5 xl:ml-20 lg:ml-10">
                                     <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
                                         style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
                                         <img src="assets/images/qoutes-2.png" alt="quote"
-                                            class=" w-20 h-20 rounded-full object-cover">
+                                            class="xl:w-20 xl:h-20 md:w-14 md:h-14 rounded-full object-cover">
                                     </div>
-                                    <p class="text-gray-500">
+                                    <p class="text-gray-500 xl:text-base lg:text-sm mob-s:text-xs">
                                         “Best hospital in surat. Dr.chetan shah is a good pediatrician doctor for child.
                                         good service..”
                                     </p>
-                                    <p class="text-gray-500 mt-6">
+                                    <p class="text-gray-500 xl:mt-6 md:mt-4 xl:text-base lg:text-sm mob-s:text-xs">
                                         <span class="text-highlight">-Pinal Viral Naik / </span>Hospital
                                     </p>
                                 </div>
-                                <div class="relative bg-white w-8/12 h-48 rounded-3xl mt-28 z-50 p-14 ml-40">
+                                <div
+                                    class="mob-s:hidden md:block relative bg-white xl:w-8/12 lg:w-7/12 xl:h-48 lg:h-44 sm:w-7/12 sm:h-36 rounded-3xl mt-28 z-50 xl:p-14 lg:p-8 mob-s:p-5 xl:ml-40 lg:ml-48 md:ml-auto">
                                     <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
                                         style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
                                         <img src="assets/images/qoutes-3.png" alt="quote"
-                                            class=" w-20 h-20 rounded-full object-cover">
+                                            class="xl:w-20 xl:h-20 md:w-14 md:h-14 rounded-full object-cover">
                                     </div>
-                                    <p class="text-gray-500">
+                                    <p class="text-gray-500 xl:text-base lg:text-sm mob-s:text-xs">
                                         “Best hospital in surat. Dr.chetan shah is a good pediatrician doctor for child.
                                         good service..”
                                     </p>
-                                    <p class="text-gray-500 mt-6">
+                                    <p class="text-gray-500 xl:mt-6 md:mt-4 xl:text-base lg:text-sm mob-s:text-xs">
                                         <span class="text-highlight">-Pinal Viral Naik / </span>Hospital
                                     </p>
                                 </div>
                             </div>
+                            <div class="mob-s:block md:hidden relative h-40 bg-white rounded-3xl mt-72 z-50 p-6">
+                                <div class="absolute -top-10 left-10 rounded-full bg-gray-50 border-2 border-white flex items-center justify-center"
+                                    style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                                    <img src="assets/images/qoutes-1.png" alt="quote"
+                                        class="w-14 h-14 rounded-full object-cover">
+                                </div>
+                                <p class="text-gray-500">
+                                    “Dr Sachin and his team gave wonderful treatment to my daughter. It is the best
+                                    hospital I ever visited.”
+                                </p>
+                                <p class="text-gray-500 mt-4">
+                                    <span class="text-highlight">-Pinal Viral Naik / </span>Hospital
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <!-- Navigation Arrows -->
-                    <div class="flex justify-center mt-6">
+                    <div class="flex justify-center">
                         <button id="prev" class="cursor-pointer">
                             <img src="assets/images/Arrow-1.png" alt="Arrow 1" class="mr-10 w-10">
                         </button>
@@ -987,7 +1046,7 @@ background: radial-gradient(circle, rgba(168,207,64,1) 0%, rgba(236,247,245,1) 5
         </section>
         <div class="md:my-28 mob-s:my-10"></div>
         <!-- blog -->
-        <section class="">
+        <section class="overflow-hidden">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-10">
                     <h2 class="text-highlight font-medium">Our Blogs</h2>
@@ -998,73 +1057,287 @@ background: radial-gradient(circle, rgba(168,207,64,1) 0%, rgba(236,247,245,1) 5
                         A Big & Dedicated Team of Experienced Pediatricians to provide Quality Healthcare.
                     </p>
                 </div>
-                <div class="relative">
-                    <!-- Swiper Slider -->
-                    <div class="swiper-container">
-                        <!-- Slider -->
-                        <div class="swiper-wrapper">
+                <!-- Slider Container -->
+                <div class="relative max-w-7xl mx-auto">
+                    <div class="swiper-container flex flex-col items-center">
+                        <div class="swiper-wrapper mb-10">
                             <!-- Blog Card 1 -->
-                            <div class="swiper-slide w-[350px] bg-white rounded-lg shadow-2xl p-5 pb-10">
-                                <img src="assets/images/blog-1.jpeg" alt="Blog 1" class="rounded-lg mb-4 w-full">
-                                <p class="text-[#A8CF45] font-medium mb-2">June 14, 2017</p>
-                                <h4 class="text-xl font-medium text-primary mb-2">
-                                    Very important immunizations for children at the age of 12
-                                </h4>
-                                <a href="" class="text-highlight font-medium">Read More..</a>
+                            <div class="swiper-slide">
+                                <div
+                                    class="blog-card bg-white rounded-xl shadow-lg p-5 xl:w-[350px] lg:w-[300px] mob-l:w-[350px] mob-s:w-[300px]">
+                                    <img src="assets/images/blog-1.jpeg" alt="Blog post about immunizations"
+                                        class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <p class="text-[#A8CF45] font-medium mb-2">June 14, 2023</p>
+                                    <h3 class="text-xl font-semibold text-primary font-workSans mb-3 line-clamp-2 ">
+                                        Very important immunizations for children at the age of 12
+                                    </h3>
+                                    <a href="#" class="text-[#00A0DC] font-medium inline-flex items-center group">
+                                        Read More..
+                                    </a>
+                                </div>
                             </div>
+
                             <!-- Blog Card 2 -->
-                            <div class="swiper-slide w-[350px] bg-white rounded-lg shadow-lg p-5 pb-10">
-                                <img src="assets/images/blog-1.jpeg" alt="Blog 1" class="rounded-lg mb-4 w-full">
-                                <p class="text-[#A8CF45] font-medium mb-2">June 14, 2017</p>
-                                <h4 class="text-xl font-medium text-primary mb-2">
-                                    Very important immunizations for children at the age of 12
-                                </h4>
-                                <a href="" class="text-highlight font-medium">Read More..</a>
+                            <div class="swiper-slide">
+                                <div
+                                    class="blog-card bg-white rounded-xl shadow-lg p-5 xl:w-[350px] lg:w-[300px] mob-l:w-[350px] mob-s:w-[300px]">
+                                    <img src="assets/images/blog-2.jpeg" alt="Blog post about child health"
+                                        class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <p class="text-[#A8CF45] font-medium mb-2">June 16, 2023</p>
+                                    <h3 class="text-xl font-semibold text-primary font-workSans mb-3 line-clamp-2">
+                                        Adapting to the development of children’s needs
+                                    </h3>
+                                    <a href="#" class="text-[#00A0DC] font-medium inline-flex items-center group">
+                                        Read More..
+                                    </a>
+                                </div>
                             </div>
+
                             <!-- Blog Card 3 -->
-                            <div class="swiper-slide w-[350px] bg-white rounded-lg shadow-lg p-5 pb-10">
-                                <img src="assets/images/blog-1.jpeg" alt="Blog 1" class="rounded-lg mb-4 w-full">
-                                <p class="text-[#A8CF45] font-medium mb-2">June 14, 2017</p>
-                                <h4 class="text-xl font-medium text-primary mb-2">
-                                    Very important immunizations for children at the age of 12
-                                </h4>
-                                <a href="" class="text-highlight font-medium">Read More..</a>
+                            <div class="swiper-slide">
+                                <div
+                                    class="blog-card bg-white rounded-xl shadow-lg p-5 xl:w-[350px] lg:w-[300px] mob-l:w-[350px] mob-s:w-[300px]">
+                                    <img src="assets/images/blog-3.jpeg" alt="Blog post about pediatric care"
+                                        class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <p class="text-[#A8CF45] font-medium mb-2">June 18, 2023</p>
+                                    <h3 class="text-xl font-semibold text-primary font-workSans mb-3 line-clamp-2">
+                                        6 Tips For Maintaining Children’s Mental Health When Sick
+                                    </h3>
+                                    <a href="#" class="text-[#00A0DC] font-medium inline-flex items-center group">
+                                        Read More..
+                                    </a>
+                                </div>
                             </div>
+
                             <!-- Blog Card 4 -->
-                            <div class="swiper-slide w-[350px] bg-white rounded-lg shadow-lg p-5 pb-10">
-                                <img src="assets/images/blog-1.jpeg" alt="Blog 1" class="rounded-lg mb-4 w-full">
-                                <p class="text-[#A8CF45] font-medium mb-2">June 14, 2017</p>
-                                <h4 class="text-xl font-medium text-primary mb-2">
-                                    Very important immunizations for children at the age of 12
-                                </h4>
-                                <a href="" class="text-highlight font-medium">Read More..</a>
+                            <div class="swiper-slide">
+                                <div
+                                    class="blog-card bg-white rounded-xl shadow-lg p-5 xl:w-[350px] lg:w-[300px] mob-l:w-[350px] mob-s:w-[300px]">
+                                    <img src="/assets/images/blog-4.jpeg" alt="Blog post about child development"
+                                        class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <p class="text-[#A8CF45] font-medium mb-2">June 20, 2023</p>
+                                    <h3 class="text-xl font-semibold text-primary font-workSans mb-3 line-clamp-2">
+                                        Very important immunizations for children at the age of 12
+                                    </h3>
+                                    <a href="#" class="text-[#00A0DC] font-medium inline-flex items-center group">
+                                        Read More..
+                                    </a>
+                                </div>
                             </div>
+                            <!-- Blog Card 1 -->
+                            <div class="swiper-slide">
+                                <div
+                                    class="blog-card bg-white rounded-xl shadow-lg p-5 xl:w-[350px] lg:w-[300px] mob-l:w-[350px] mob-s:w-[300px]">
+                                    <img src="assets/images/blog-5.jpg" alt="Blog post about immunizations"
+                                        class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <p class="text-[#A8CF45] font-medium mb-2">June 14, 2023</p>
+                                    <h3 class="text-xl font-semibold text-primary font-workSans mb-3 line-clamp-2 ">
+                                        Very important immunizations for children at the age of 12
+                                    </h3>
+                                    <a href="#" class="text-[#00A0DC] font-medium inline-flex items-center group">
+                                        Read More..
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href=""
+                                class="inline-block text-center bg-highlight text-white px-8 py-3 rounded-full hover:bg-white hover:text-highlight hover:shadow-xl transition-colors">
+                                See More..
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="md:my-28 mob-s:my-10"></div>
         </section>
-        
     </main>
+    <!-- Newsletter Section -->
+    <div class="container mx-auto px-4 md:-mb-20 relative z-10 overflow-hidden mob-s:mb-10">
+        <div class="relative md:p-12 mob-s:p-6" style="background: linear-gradient(90deg, #A8CF45 0%, #00AEEF 100%);
+            border-radius: 20px;">
+            <div class="md:max-w-4xl mx-auto">
+                <h2
+                    class="text-white text-2xl md:text-3xl font-bold text-center md:mb-10 mob-xl:mb-20 mob-s:mb-10 font-workSans tracking-wider z-20">
+                    Join Our Newsletter
+                </h2>
+                <div class="flex  mob-s:flex-col md:flex-row justify-center items-center mb-6">
+                    <div class="relative flex items-center z-10 p-1 bg-white rounded-full shadow-lg w-full max-w-3xl">
+                        <input type="email" placeholder="Enter your email..."
+                            class="flex-grow px-6 py-4 rounded-full font-semibold text-lg outline-none text-gradient  z-10" />
+                        <button
+                            class="hidden md:block bg-highlight text-white font-medium px-8 py-4 rounded-full shadow-md hover:bg-white hover:text-highlight transition-all"
+                            style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                            Subscribe
+                        </button>
+                    </div>
+                    <button
+                            class="inline-block md:hidden w-32 mt-5 bg-[#00A0DC] text-white px-8 py-3 rounded-full hover:bg-white hover:text-highlight hover:shadow-xl transition-colors">
+                            Subscribe
+                        </button>
+                </div>
+            </div>
+            <div class="absolute md:-bottom-5 md:top-5 mob-s:top-0 mob-s:bottom-0">
+                <img src="assets/images/newsletter.png" alt="newsletter">
+            </div>
+            <div class="absolute right-40 top-20">
+                <img src="assets/images/star.png" alt="star">
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer -->
+    <footer class="bg-black pt-32 pb-8 relative overflow-hidden">
+        <div class="absolute -top-10 left-0 w-full">
+            <img src="assets/images/bg-1.png" alt="bg-1" class="w-full mob-s:h-[1480px] md:h-[800px] object-cover">
+        </div>
+        <div class="absolute -bottom-0 -left-0">
+            <img src="assets/images/Ellipse 9.png" alt="Ellipse" class="w-full opacity-30">
+        </div>
+        <div class="absolute -top-0 -right-0">
+            <img src="assets/images/Ellipse 10.png" alt="Ellipse" class="w-full opacity-50 rotate-180">
+        </div>
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:gap-10 mb-12">
+                <!-- Column 1 - Logo & Info -->
+                <div class="space-y-8  z-10">
+                    <img src="assets/images/logo.png" alt="Anand Children Hospital" class="h-16">
+                    <p class="text-white xl:text-base mob-s:text-sm">
+                        Anand Children Hospital is one of the largest Pediatric Super Specialty Hospital of South
+                        Gujarat located at the center of the Surat City
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center text-white xl:text-base mob-s:text-sm">
+                            <i class="fa-solid fa-stopwatch text-highlight text-xl xl:text-base mob-s:text-sm mr-4"></i>
+                            09 AM - 10 PM , Monday - Saturday
+                        </div>
+                        <div class="flex items-center text-white xl:text-base mob-s:text-sm">
+                            <i class="fa-solid fa-stopwatch text-highlight text-xl xl:text-base mob-s:text-sm mr-4"></i>
+                            10 AM - 07 PM , Sunday
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2 - Quick Links -->
+                <div class="xl:ml-32 sm:ml-10 z-10  md:mt-0 mob-s:mt-10">
+                    <h3 class="text-[#00AEEF] text-xl font-semibold mb-6 text-gradient">Quick Links</h3>
+                    <ul class="space-y-3 z-10">
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Home</a>
+                        </li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">About
+                                Us</a></li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Services</a>
+                        </li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Appointment</a>
+                        </li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Blogs</a>
+                        </li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 - Useful Links -->
+                <div class="md:mt-20 lg:mt-0 mob-s:mt-10 z-10">
+                    <h3 class="text-[#00AEEF] text-xl font-semibold mb-6 text-gradient">Useful Links</h3>
+                    <ul class="space-y-3 z-10">
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Privacy
+                                Policy</a></li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Terms
+                                and
+                                Conditions</a></li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Disclaimer</a>
+                        </li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Support</a>
+                        </li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 - Get In Touch -->
+                <div class="md:mt-20 lg:mt-0 mob-s:mt-10 z-10">
+                    <h3 class="text-[#00AEEF] text-xl font-semibold mb-6 text-gradient">Get In Touch</h3>
+                    <div class="space-y-4">
+                        <p class="text-white xl:text-base mob-s:text-sm">
+                            1/568 B Por Mohallo, Athugar Street,<br>
+                            Near Kailash Restaurant, Nanpura,<br>
+                            Surat - 395001
+                        </p>
+                        <div class="space-y-2">
+                            <p class="text-white  xl:text-base mob-s:text-sm">
+                                <i class="fa-solid fa-phone text-highlight text-xl mob-s:text-sm xl:mr-4 md:mr-2"></i>
+                                NICU - 9925100141, PICU - 9879612932
+                            </p>
+                            <p class="text-white  xl:text-base mob-s:text-sm">
+                                <i
+                                    class="fa-solid fa-envelope text-highlight text-xl mob-s:text-sm xl:mr-4 md:mr-2"></i>
+                                Email : Anandchildrenhospital@yahoo.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex flex-col-reverse md:flex-row justify-between md:items-center gap-4 md:p-6">
+                    <p class="text-gray-400 text-sm ">
+                        Visitor Count : 87872 | Anand Children Hospital. All right reserved. | Developed By : ABC
+                    </p>
+                    <div class="flex gap-4 z-10">
+                        <a href=""
+                            class="w-10 h-10 rounded-full text-gradient border border-gray-700 flex items-center justify-center transition-transform hover:scale-110">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href=""
+                            class="w-10 h-10 rounded-full text-gradient border border-gray-700 flex items-center justify-center transition-transform hover:scale-110">
+                            <i class="fa-brands fa-facebook text-xl"></i>
+                        </a>
+                        <a href=""
+                            class="w-10 h-10 rounded-full text-gradient border border-gray-700 flex items-center justify-center transition-transform hover:scale-110">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="js/mobile-toggle.js"></script>
     <script src="js/counter.js"></script>
     <script src="js/slider.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        // Initialize Swiper
-        var swiper = new Swiper('.swiper-container', {
-            loop: true, // Infinite loop
-            slidesPerView: 'auto', // Show as many slides as possible based on the container width
-            spaceBetween: 30, // Space between slides
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true, // Enable pagination clicks
-            },
-            navigation: {
-                nextEl: '.swiper-button-next', // Next button (optional)
-                prevEl: '.swiper-button-prev', // Prev button (optional)
-            },
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            loop: true,
+            centeredSlides: true,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            }
         });
     </script>
 </body>
