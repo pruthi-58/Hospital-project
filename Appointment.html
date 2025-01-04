@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anand Hospital</title>
+    <!-- font-awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'mob-s': '320px',
+                        'mob-l': '375px',
+                        'mob-xl': '425px',
+                        '4k': '2560px',
+                    },
+                    colors: {
+                        primary: '#113C4E',
+                        secondary: '#434343',
+                        highlight: '#00AEEF',
+                    },
+                    fontFamily: {
+                        workSans: ['Work Sans', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .progress-bar {
+            background: linear-gradient(to right, #A8CF45 0%, #00AEEF 50%, #113C4E 100%);
+            transition: width 1.5s ease-in-out;
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #A8CF45 0%, #00AEEF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .question-expanded {
+            background-color: #F5F9F0;
+        }
+
+        .question-collapsed {
+            background-color: #EBF6FA;
+        }
+    </style>
+</head>
+
+<body class="font-outfit">
+    <!-- header -->
+    <header class="absolute top-0 left-0 w-full z-20">
+        <div
+            class="container  xl:container  lg:container  md:container  sm:container mob-s:container mx-auto px-4 flex py-4 justify-between items-center">
+            <div class="logo">
+                <a href="Home.html">
+                    <img src="/assets/images/logo.png" alt="logo" class="xl:w-56 lg:w-44 md:w-32 mob-s:w-36">
+                </a>
+            </div>
+            <nav class="hidden md:flex md:flex-row md:items-center">
+                <ul class="flex flex-col md:flex-row items-center justify-center xl:gap-8 md:gap-5">
+                    <li>
+                        <a href="Home.html" class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="About-us.html" class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">About
+                            Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Services.html"
+                            class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">Services</a>
+
+                    </li>
+                    <li class="relative">
+                        <a href="Appointment.html"
+                            class="xl:text-xl md:text-sm text-[#404040] text-highlight">Appointment</a>
+                        <span class="absolute text-highlight text-3xl right-10 -bottom-3">.....</span>
+                    </li>
+                    <li>
+                        <a href="Blogs.html" class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="Contact Us.html"
+                            class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="flex items-center space-x-5 sm:flex hidden">
+                <a href=""
+                    class="text-primary lg:text-xl border-b-2 border-primary font-medium hover:text-highlight hover:border-highlight">Login</a>
+                <a href=""
+                    class="bg-highlight text-white lg:text-base md:text-sm md:px-2 lg:px-5 mob-s:px-2 mob-s:py-2 rounded-full flex items-center hover:bg-white hover:text-highlight shadow-2xl shadow-highlight transition-colors">
+                    Call Now
+                    <i class="fa-solid fa-phone lg:ml-2 text-sm"></i>
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="block md:hidden p-1 focus:outline-none">
+                <img src="assets/images/menu.png" alt="menu" class="mob-s:w-6">
+            </button>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="hidden sm:hidden p-2 bg-white text-center text-black absolute top-full left-0 w-full shadow-lg"
+                style="z-index: 99999;">
+                <a href="Home.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+                <a href="About-us.html" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+                <a href="Services.html" class="block px-4 py-2 hover:bg-gray-100">Services</a>
+                <a href="Appointment.html" class="block px-4 py-2 hover:bg-gray-100">Appointment</a>
+                <a href="Blogs.html" class="block px-4 py-2 hover:bg-gray-100">Blogs</a>
+                <a href="Contact Us.html" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
+                <div class="flex items-center justify-center space-x-5 mt-5">
+                    <a href=""
+                        class="text-primary lg:text-xl border-b-2 border-primary font-medium hover:text-highlight hover:border-highlight">Login</a>
+                    <a href=""
+                        class="bg-blue-500 text-white md:text-sm md:px-2 lg:px-5 mob-s:px-2 mob-s:py-2 rounded-full flex items-center hover:bg-blue-600 transition-colors">
+                        Call Now
+                        <i class="fa-solid fa-phone lg:ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- main  -->
+    <main>
+        <!-- sub banner -->
+        <section class="sub-banner bg-cover relative overflow-hidden xl:h-[700px] py-20">
+            <div class="container xl:container lg:container md:container sm:container mob-s:container mx-auto px-4">
+                <div class="sub-banner-content md:py-20">
+                    <div class="grid md:grid-cols-2 gap-8 items-end">
+                        <div class="space-y-7 z-10 lg:mt-24 mob-s:mt-10">
+                            <!-- Breadcrumb -->
+                            <div class="flex items-center space-x-5 text-xl">
+                                <a href="Home.html" class="text-highlight hover:text-primary">Home</a>
+                                <span class="text-highlight">></span>
+                                <span class="text-highlight">Appointment</span>
+                            </div>
+
+                            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-primary font-workSans">
+                                Appointment
+                            </h1>
+
+                            <p class="lg:text-lg text-[#404040] max-w-xl">
+                                Good health is a state of mental, physical and social well being and it does not just
+                                mean the absence diseases!
+                            </p>
+                        </div>
+                        <div
+                            class="z-10 flex items-end justify-center md:absolute xl:bottom-0 xl:right-72 lg:bottom-16 lg:right-44 sm:bottom-4 sm:right-20">
+                            <img src="assets/images/appoinment.png" alt="images"
+                                class="xl:w-[450px] lg:w-[350px] w-[300px]">
+                        </div>
+                        <div class="absolute right-0  bottom-20 mob-s:block md:hidden w-full h-[300px]">
+                            <img src="assets/images/Rectangle 28.png" alt="sub-banner"
+                                class="opacity-60 w-full h-[300px] object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute left-0 top-0 w-full">
+                <img src="assets/images/sub-banner.png" alt="sub-banner"
+                    class="w-full  xl:h-[700px] md:h-[540px] mob-l:h-[725px] mob-s:h-[710px] opacity-20 object-cover">
+            </div>
+            <div class="absolute right-0 xl:bottom-0 lg:bottom-16 md:bottom-4 mob-s:hidden md:inline-block">
+                <img src="assets/images/Rectangle 28.png" alt="sub-banner"
+                    class="opacity-60 xl:w-full lg:w-96 sm:w-72 xl:h-[700px] lg:h-[550px] md:h-[560px] object-cover">
+            </div>
+            <div class="absolute top-0 left-0 w-full">
+                <img src="assets/images/Ellipse 10.png" alt="Ellipse"
+                    class=" w-full  xl:h-[700px] md:h-[540px] mob-l:h-[725px] mob-s:h-[710px]">
+            </div>
+            <div class="absolute top-0 left-0">
+                <img src="assets/images/Ellipse 9.png" alt="Ellipse" class="w-full">
+            </div>
+        </section>
+        <div class="md:my-28 mob-s:my-10 "></div>
+        <!-- form -->
+        <section class="bg-black py-10 relative overflow-hidden">
+            <div class="absolute -top-20 left-0 w-full">
+                <img src="assets/images/bg-1.png" alt="wave"
+                    class="w-full xl:h-full md:h-[1000px] mob-s:h-[1000px] object-cover">
+            </div>
+            <div class="absolute -top-20 opacity-30">
+                <img src="assets/images/Ellipse 9.png" alt="Ellipse">
+            </div>
+            <div class="absolute -top-20 right-0">
+                <img src="assets/images/Ellipse 10 (1).png" alt="Ellipse">
+            </div>
+            <div class="container mx-auto px-4 py-16">
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <!-- Left Column -->
+                    <div class="text-white space-y-6">
+                        <div class="lg:mb-14 sm:mb-5 z-10">
+                            <p class="text-cyan-400 mb-4">Booking Now</p>
+                            <h1 class="lg:text-4xl mob-s:text-2xl font-bold mb-4 font-workSans">Make An Appointment</h1>
+                            <p class="text-gray-400 lg:text-base sm:text-sm">
+                                we offer a wide range of comprehensive healthcare services to address all aspects of
+                                your health.
+                            </p>
+                        </div>
+
+                        <div class=" z-10">
+                            <h2 class="lg:text-2xl mob-s:text-xl font-bold mb-6">Dr. Sachin A. Shah</h2>
+
+                            <!-- Schedule -->
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gradient lg:text-base mob-s:text-sm">Monday - Thursday</span>
+                                    <span class="text-highlight lg:text-base mob-s:text-sm">08.00 AM - 20.00 PM</span>
+                                </div>
+                                <div class="border border-gray-800 w-full"></div>
+                                <div class="flex justify-between">
+                                    <span class="text-gradient lg:text-base mob-s:text-sm">Friday</span>
+                                    <span class="text-highlight lg:text-base mob-s:text-sm">08.00 AM - 17.00 PM</span>
+                                </div>
+                                <div class="border border-gray-800 w-full"></div>
+                                <div class="flex justify-between">
+                                    <span class="text-gradient lg:text-base mob-s:text-sm">Saturday</span>
+                                    <span class="text-highlight lg:text-base mob-s:text-sm">09.00 AM - 20.00 PM</span>
+                                </div>
+                                <div class="border border-gray-800 w-full"></div>
+                                <div class="flex justify-between pb-2">
+                                    <span class="text-gradient lg:text-base mob-s:text-sm">Sunday</span>
+                                    <span class="text-highlight lg:text-base mob-s:text-sm">09.00 AM - 18.00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Support Section -->
+                        <div class=" z-10">
+                            <h2 class="lg:text-xl sm:text-lg font-bold mb-4">Support</h2>
+                            <p class="text-gray-400 mb-6 max-w-xs lg:text-base sm:text-sm">
+                                we offer a wide range of comprehensive healthcare services to address all aspects of
+                                your health.
+                            </p>
+
+                            <div class="flex flex-col sm:flex-row gap-2">
+                                <div class="flex items-center gap-4 z-10">
+                                    <div class="p-3 rounded-full"
+                                        style="background: linear-gradient(318.7deg, #0098DA 4.91%, #A8CF45 90.27%);">
+                                        <img src="assets/images/phone.png" alt="phone">
+                                    </div>
+                                    <div>
+                                        <p class="text-white font-medium lg:text-base sm:text-sm">Phone Number</p>
+                                        <p class="text-gray-400 lg:text-base sm:text-sm">(+62)81 342 3471</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 z-10">
+                                    <div class="p-3 rounded-full"
+                                        style="background: linear-gradient(318.7deg, #0098DA 4.91%, #A8CF45 90.27%);">
+                                        <img src="assets/images/sms.png" alt="sms">
+                                    </div>
+                                    <div>
+                                        <p class="text-white font-medium lg:text-base sm:text-sm">Email Address</p>
+                                        <p class="text-gray-400 lg:text-base sm:text-sm">abs@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Booking Form -->
+                    <div class="bg-white rounded-3xl md:p-10 mob-s:p-5 z-10">
+                        <form class="2xl:space-y-8 xl:space-y-10 lg:space-y-10 mob-s:space-y-4">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Name</label>
+                                    <input type="text" placeholder="Your Name"
+                                        class="w-full px-4 py-3 rounded-full bg-gray-100 border-transparent focus:border-cyan-500 focus:bg-white focus:ring-0">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Email</label>
+                                    <input type="email" placeholder="Your Email"
+                                        class="w-full px-4 py-3 rounded-full bg-gray-100 border-transparent focus:border-cyan-500 focus:bg-white focus:ring-0">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 mb-2">Service</label>
+                                <select
+                                    class="w-full px-4 py-3 rounded-full bg-gray-100 border-transparent focus:border-cyan-500 focus:bg-white focus:ring-0">
+                                    <option value="">Select Services</option>
+                                    <option value="1">General Checkup</option>
+                                    <option value="2">Specialist Consultation</option>
+                                    <option value="3">Pediatric Care</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 mb-2">Date</label>
+                                <input type="date"
+                                    class="w-full px-4 py-3 rounded-full bg-gray-100 border-transparent focus:border-cyan-500 focus:bg-white focus:ring-0">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 mb-2">Free Request</label>
+                                <textarea rows="4" placeholder="Your Message"
+                                    class="w-full px-4 py-3 rounded-3xl bg-gray-100 border-transparent focus:border-cyan-500 focus:bg-white focus:ring-0"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-highlight text-white py-3 rounded-full hover:bg-white hover:text-highlight hover:shadow-xl transition-colors">
+                                Booking Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="md:my-28 mob-s:my-10 "></div>
+        <!-- steps -->
+        <section>
+            <div class="container  mx-auto px-4">
+                <!-- Header Section -->
+                <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                    <div>
+                        <p class="text-cyan-500 mb-4">Appointment Steps</p>
+                        <h2 class="max-w-md text-primary font-workSans text-3xl md:text-4xl font-bold">
+                            Easy Step To Booking Appointment
+                        </h2>
+                    </div>
+                    <div>
+                        <p class="text-gray-600 max-w-xl">
+                            Anand Children Hospital is one of the largest Pediatric Super Specialty Hospital of South
+                            Gujarat located at the center of the Surat City. It is the 1st Pediatric Hospital in Gujarat
+                            to get Level III (A) NNF (National Neonatology Forum) accreditation.
+                        </p>
+                    </div>
+                </div>
+                <!-- steps contain -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="flex flex-col w-52">
+                        <div class="w-16 h-16 flex items-center justify-center border rounded-full flex relative"
+                            style="background: linear-gradient(90deg, #A8CF45 0%, #00AEEF 100%);padding: 2px;">
+                            <div class="w-full h-full flex items-center justify-center bg-white rounded-full">
+                                <span class="rounded-full text-primary font-bold text-3xl">1</span>
+                            </div>
+                            <div class="border border-dashed border-[#BFBFBF] w-64 left-24 absolute opacity-50"></div>
+                        </div>
+
+                        <div class="mt-4">
+                            <h3 class="text-primary font-semibold text-xl">Search Nearest Clinic Of Bootamins</h3>
+                            <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit, sed do eiusmod tempor incididunt ut lab.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col w-52">
+                        <div class="w-16 h-16 flex items-center justify-center border rounded-full flex relative"
+                            style="background: linear-gradient(90deg, #A8CF45 0%, #00AEEF 100%);padding: 2px;">
+                            <div class="w-full h-full flex items-center justify-center bg-white rounded-full">
+                                <span class="rounded-full text-primary font-bold text-3xl">2</span>
+                            </div>
+                            <div class="border border-dashed border-[#BFBFBF] w-64 left-24 absolute opacity-50"></div>
+                        </div>
+
+                        <div class="mt-4">
+                            <h3 class="text-primary font-semibold text-xl">Select Your Services Option</h3>
+                            <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit, sed do eiusmod tempor incididunt ut lab.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col w-52">
+                        <div class="w-16 h-16 flex items-center justify-center border rounded-full flex relative"
+                            style="background: linear-gradient(90deg, #A8CF45 0%, #00AEEF 100%);padding: 2px;">
+                            <div class="w-full h-full flex items-center justify-center bg-white rounded-full">
+                                <span class="rounded-full text-primary font-bold text-3xl">3</span>
+                            </div>
+                            <div class="border border-dashed border-[#BFBFBF] w-64 left-24 absolute opacity-50"></div>
+                        </div>
+
+                        <div class="mt-4">
+                            <h3 class="text-primary font-semibold text-xl">Fill Out The Appointment Form</h3>
+                            <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit, sed do eiusmod tempor incididunt ut lab.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col w-52">
+                        <div class="w-16 h-16 flex items-center justify-center border rounded-full flex"
+                            style="background: linear-gradient(90deg, #A8CF45 0%, #00AEEF 100%);padding: 2px;">
+                            <div class="w-full h-full flex items-center justify-center bg-white rounded-full">
+                                <span class="rounded-full text-primary font-bold text-3xl">4</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <h3 class="text-primary font-semibold text-xl">Meet With Doctor At Bootamins Clinic</h3>
+                            <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit, sed do eiusmod tempor incididunt ut lab.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="md:my-28 mob-s:my-10 "></div>
+        <!-- Schedule -->
+        <section class="relative px-4 py-12 md:py-16 lg:py-20 overflow-hidden">
+            <!-- wave -->
+            <div class="absolute -top-10 left-0 w-full z-10 md:block mob-s:hidden">
+                <img src="assets/images/bg.png" alt="wave" class="w-full">
+            </div>
+            <div class="container mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-end">
+                    <!-- Left side - Doctor Image -->
+                    <div class="relative">
+                        <div
+                            class="bg-gradient-to-br from-[#E8F4D9] via-[#B2E7D7] to-[#B9E6FE] w-full mob-xl:h-96 mob-s:h-60 rounded-3xl p-6">
+                            <div class="absolute bottom-0 mob-xl:left-20 mob-s:left-10 z-20">
+                                <img src="assets/images/doctor-1.png" alt="Doctor with clipboard"
+                                    class="mob-xl:w-96 mob-s:w-52 h-auto rounded-2xl">
+                            </div>
+                            <!-- 24 Hours Service Badge -->
+                            <div class="absolute lg:w-48 lg:h-14 top-20 lg:top-10 md:top-0 mob-s:-right-5 mob-s:-top-10 mob-s:p-2 z-20 -right-20 bg-[#ffffff] lg:p-3 flex items-center justify-center text-center text-highlight text-light rounded-full lg:text-base mob-s:text-xs rounded-2xl"
+                                style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                                <span
+                                    class="bg-[#A8CF45] mob-l:w-8 mob-l:h-8 mob-s:p-1 flex justify-center items-center rounded-full mr-2">
+                                    <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                                </span>
+                                Regular Checkup
+                            </div>
+                            <!-- vector -->
+                            <div class="absolute -top-10 left-10">
+                                <img src="assets/images/Vector (1).png" alt="vector">
+                            </div>
+                            <!-- capsule -->
+                            <div class="absolute bottom-32 -right-5 lg:block mob-s:hidden">
+                                <img src="assets/images/capsule.png" alt="capsule">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right side - Schedule -->
+                    <div class="space-y-6  z-20">
+                        <div>
+                            <span class="text-[#00A0DC] font-medium">Emergency Situation</span>
+                            <h2 class="lg:text-4xl mob-s:text-3xl font-bold text-primary mt-2 font-workSans">
+                                Doctor's Schedule Day
+                            </h2>
+                        </div>
+
+                        <p class="text-gray-600 lg:text-lg mob-s:text-sm">
+                            Anand Children Hospital is one of the largest Pediatric Super Specialty Hospital of South
+                            Gujarat located at the center of the Surat City. It is the 1st Pediatric Hospital in Gujarat
+                        </p>
+
+                        <!-- Schedule List -->
+                        <div class="lg:space-y-4">
+                            <div class="flex  items-center py-2">
+                                <span class="text-[#9CCD65] font-medium">08.00 AM - 12.00 PM</span>
+                                <span class="ml-auto text-left text-gray-800">Dr. Sachin A. Shah</span>
+                            </div>
+                            <div class="flex  items-center py-2">
+                                <span class="text-[#9CCD65] font-medium">12.00 PM - 03.00 PM</span>
+                                <span class="ml-auto text-left text-gray-800">Dr. Sachin A. Shah</span>
+                            </div>
+                            <div class="flex  items-center py-2">
+                                <span class="text-[#9CCD65] font-medium">03.00 PM - 07.00 PM</span>
+                                <span class="ml-auto text-left text-gray-800">Dr. Pratik A. Shah</span>
+                            </div>
+                            <div class="flex  items-center py-2">
+                                <span class="text-[#9CCD65] font-medium">07.00 PM - 11.00 PM</span>
+                                <span class="ml-auto text-left text-gray-800">Dr. Neeta C. Shah</span>
+                            </div>
+                        </div>
+
+                        <!-- Chat Button -->
+                        <button
+                            class="inline-block bg-[#00A0DC] text-white px-8 py-3 rounded-full hover:bg-white hover:text-highlight hover:shadow-xl transition-colors">
+                            Chat with doctor..
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="md:my-28 mob-s:my-10 "></div>
+        <!-- FAQ Section -->
+        <section>
+            <div class="container mx-auto px-4">
+                <!-- Header -->
+                <div class="text-center mb-16">
+                    <span class="text-highlight font-medium">Clients Questions</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mt-2 font-workSans">
+                        Related Question
+                    </h2>
+                    <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+                        A Big & Dedicated Team of Experienced Pediatricians to provide Quality Healthcare.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    <!-- Questions Column -->
+                    <div class="space-y-4 relative" data-aos="fade-down" data-aos-easing="linear"
+                        data-aos-duration="1500">
+                        <div class="absolute top-20 -right-20 mob-s:hidden lg:block">
+                            <img src="assets/images/vector-3.png" alt="vector-3">
+                        </div>
+                        <!-- FAQ Item 1 -->
+                        <div class=" max-w-3xl bg-[rgba(168,207,64,0.10127801120448177)] lg:p-5 p-3 rounded-2xl">
+                            <div class="faq-header flex justify-between items-center py-4 cursor-pointer">
+                                <h2 class="lg:text-2xl md:text-xl tracking-wide font-semibold text-primary">Why is
+                                    Webflow the best
+                                    nocode tool?</h2>
+                                <span class="icon p-2 rounded-xl"
+                                    style="background: linear-gradient(318.7deg, #0098DA 4.91%, #A8CF45 90.27%);">
+                                    <i class="fa-solid fa-minus fa-xl text-white"></i>
+                                </span>
+                            </div>
+                            <div class="faq-content py-8">
+                                <p class="lg:text-lg  text-zinc-500">
+                                    Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                    ea commodo consequat aute irure dolor
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class=" max-w-3xl bg-[rgba(0,152,218,0.0984768907563025)] lg:p-5 p-3 rounded-2xl">
+                            <div class="faq-header flex justify-between items-center py-4 cursor-pointer">
+                                <h2 class="lg:text-2xl md:text-xl tracking-wide font-semibold text-primary">When did
+                                    Webflow was
+                                    founded?</h2>
+                                <span class="icon p-2 rounded-xl bg-white">
+                                    <i class="fa-solid fa-plus fa-xl text-highlight"></i>
+                                </span>
+                            </div>
+                            <div class="faq-content hidden py-8">
+                                <p class="lg:text-lg  text-zinc-500">
+                                    Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                    ea commodo consequat aute irure dolor
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class=" max-w-3xl bg-[rgba(0,152,218,0.0984768907563025)] lg:p-5 p-3 rounded-2xl">
+                            <div class="faq-header flex justify-between items-center py-4 cursor-pointer">
+                                <h2 class="lg:text-2xl md:text-xl tracking-wide font-semibold text-primary">Is NoCode
+                                    the future of
+                                    the web?</h2>
+                                <span class="icon p-2 rounded-xl bg-white">
+                                    <i class="fa-solid fa-plus fa-xl text-highlight"></i>
+                                </span>
+                            </div>
+                            <div class="faq-content hidden py-8">
+                                <p class="lg:text-lg  text-zinc-500">
+                                    Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                    ea commodo consequat aute irure dolor
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- images Column -->
+                    <div class="flex justify-end items-center rounded-2xl relative md:mb-0 mob-s:mb-20"
+                        data-aos="fade-up">
+                        <img src="assets/images/faq.png" alt="faq"
+                            class="xl:w-[450px] xl:h-[500px] lg:w-80 mob-xl:w-72 md:h-auto mob-xl:h-96 mob-l:w-60 mob-l:h-80 mob-s:w-56 mob-s:h-72 object-cover rounded-2xl xl:-translate-y-10 z-10"
+                            style="box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 15px 0px;">
+                        <div
+                            class="absolute lg:-bottom-5 lg:right-40 sm:-bottom-20 sm:right-24 mob-s:-bottom-10 mob-s:right-20 xl:w-[400px] xl:h-[450px] lg:w-64 lg:h-[400px] sm:w-60 sm:h-96 mob-xl:w-72 mob-xl:h-96 mob-l:w-60 mob-l:h-80 mob-s:w-48 mob-s:h-72 border-2 border-black rounded-3xl">
+                            <img src="assets/images/leaf.png" alt="leaf" class="absolute bottom-32 -left-7">
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <div class="md:my-28 mob-s:my-10 "></div>
+    </main>
+    <!-- Newsletter Section -->
+    <div class="container mx-auto px-4 md:-mb-20 relative z-10 overflow-hidden mob-s:mb-10">
+        <div class="relative md:p-12 mob-s:p-6" style="background: linear-gradient(90deg, #A8CF45 0%, #00AEEF 100%);
+            border-radius: 20px;">
+            <div class="md:max-w-4xl mx-auto">
+                <h2
+                    class="text-white text-2xl md:text-3xl font-bold text-center md:mb-10 mob-xl:mb-20 mob-s:mb-10 font-workSans tracking-wider z-20">
+                    Join Our Newsletter
+                </h2>
+                <div class="flex  mob-s:flex-col md:flex-row justify-center items-center mb-6">
+                    <div class="relative flex items-center z-10 p-1 bg-white rounded-full shadow-lg w-full max-w-3xl">
+                        <input type="email" placeholder="Enter your email..."
+                            class="flex-grow px-6 py-4 rounded-full font-semibold text-lg outline-none text-gradient  z-10" />
+                        <button
+                            class="hidden md:block bg-highlight text-white font-medium px-8 py-4 rounded-full shadow-md hover:bg-white hover:text-highlight transition-all"
+                            style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                            Subscribe
+                        </button>
+                    </div>
+                    <button
+                        class="inline-block md:hidden w-32 mt-5 bg-[#00A0DC] text-white px-8 py-3 rounded-full hover:bg-white hover:text-highlight hover:shadow-xl transition-colors">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+            <div class="absolute md:-bottom-5 md:top-5 mob-s:top-0 mob-s:bottom-0">
+                <img src="assets/images/newsletter.png" alt="newsletter">
+            </div>
+            <div class="absolute right-40 top-20">
+                <img src="assets/images/star.png" alt="star">
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer -->
+    <footer class="bg-black pt-32 pb-8 relative overflow-hidden">
+        <div class="absolute -top-10 left-0 w-full">
+            <img src="assets/images/bg-1.png" alt="bg-1" class="w-full mob-s:h-[1480px] md:h-[800px] object-cover">
+        </div>
+        <div class="absolute -bottom-0 -left-0">
+            <img src="assets/images/Ellipse 9.png" alt="Ellipse" class="w-full opacity-30">
+        </div>
+        <div class="absolute -top-0 -right-0">
+            <img src="assets/images/Ellipse 10.png" alt="Ellipse"
+                class="w-full  mob-s:h-[1480px] md:h-[800px] opacity-50 rotate-180">
+        </div>
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:gap-10 mb-12">
+                <!-- Column 1 - Logo & Info -->
+                <div class="space-y-8  z-10">
+                    <img src="assets/images/logo.png" alt="Anand Children Hospital" class="h-16">
+                    <p class="text-white xl:text-base mob-s:text-sm">
+                        Anand Children Hospital is one of the largest Pediatric Super Specialty Hospital of South
+                        Gujarat located at the center of the Surat City
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center text-white xl:text-base mob-s:text-sm">
+                            <i class="fa-solid fa-stopwatch text-highlight text-xl xl:text-base mob-s:text-sm mr-4"></i>
+                            09 AM - 10 PM , Monday - Saturday
+                        </div>
+                        <div class="flex items-center text-white xl:text-base mob-s:text-sm">
+                            <i class="fa-solid fa-stopwatch text-highlight text-xl xl:text-base mob-s:text-sm mr-4"></i>
+                            10 AM - 07 PM , Sunday
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2 - Quick Links -->
+                <div class="xl:ml-32 sm:ml-10 z-10  md:mt-0 mob-s:mt-10">
+                    <h3 class="text-[#00AEEF] text-xl font-semibold mb-6 text-gradient">Quick Links</h3>
+                    <ul class="space-y-3 z-10">
+                        <li><a href="Home.html"
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Home</a>
+                        </li>
+                        <li><a href="About-us.html"
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">About
+                                Us</a></li>
+                        <li><a href="Services.html"
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Services</a>
+                        </li>
+                        <li><a href="Appointment.html"
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Appointment</a>
+                        </li>
+                        <li><a href="Blogs.html"
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Blogs</a>
+                        </li>
+                        <li><a href="Contact Us.html"
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 - Useful Links -->
+                <div class="md:mt-20 lg:mt-0 mob-s:mt-10 z-10">
+                    <h3 class="text-[#00AEEF] text-xl font-semibold mb-6 text-gradient">Useful Links</h3>
+                    <ul class="space-y-3 z-10">
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Privacy
+                                Policy</a></li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Terms
+                                and
+                                Conditions</a></li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Disclaimer</a>
+                        </li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Support</a>
+                        </li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 - Get In Touch -->
+                <div class="md:mt-20 lg:mt-0 mob-s:mt-10 z-10">
+                    <h3 class="text-[#00AEEF] text-xl font-semibold mb-6 text-gradient">Get In Touch</h3>
+                    <div class="space-y-4">
+                        <p class="text-white xl:text-base mob-s:text-sm">
+                            1/568 B Por Mohallo, Athugar Street,<br>
+                            Near Kailash Restaurant, Nanpura,<br>
+                            Surat - 395001
+                        </p>
+                        <div class="space-y-2">
+                            <p class="text-white  xl:text-base mob-s:text-sm">
+                                <i class="fa-solid fa-phone text-highlight text-xl mob-s:text-sm xl:mr-4 md:mr-2"></i>
+                                NICU - 9925100141, PICU - 9879612932
+                            </p>
+                            <p class="text-white  xl:text-base mob-s:text-sm">
+                                <i
+                                    class="fa-solid fa-envelope text-highlight text-xl mob-s:text-sm xl:mr-4 md:mr-2"></i>
+                                Email : Anandchildrenhospital@yahoo.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex flex-col-reverse md:flex-row justify-between md:items-center gap-4 md:p-6">
+                    <p class="text-gray-400 text-sm ">
+                        Visitor Count : 87872 | Anand Children Hospital. All right reserved. | Developed By : ABC
+                    </p>
+                    <div class="flex gap-4 z-10">
+                        <a href="https://www.instagram.com/" target="_blank"
+                            class="w-10 h-10 rounded-full text-gradient border border-gray-700 flex items-center justify-center transition-transform hover:scale-110">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank"
+                            class="w-10 h-10 rounded-full text-gradient border border-gray-700 flex items-center justify-center transition-transform hover:scale-110">
+                            <i class="fa-brands fa-facebook text-xl"></i>
+                        </a>
+                        <a href="https://whatsapp.com/" target="_blank"
+                            class="w-10 h-10 rounded-full text-gradient border border-gray-700 flex items-center justify-center transition-transform hover:scale-110">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/mobile-toggle.js"></script>
+</body>
+
+</html>
