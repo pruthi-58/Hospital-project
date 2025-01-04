@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anand Hospital</title>
+    <!-- font-awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'mob-s': '320px',
+                        'mob-l': '375px',
+                        'mob-xl': '425px',
+                        '4k': '2560px',
+                    },
+                    colors: {
+                        primary: '#113C4E',
+                        secondary: '#434343',
+                        highlight: '#00AEEF',
+                    },
+                    fontFamily: {
+                        workSans: ['Work Sans', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        .progress-bar {
+            background: linear-gradient(to right, #A8CF45 0%, #00AEEF 50%, #113C4E 100%);
+            transition: width 1.5s ease-in-out;
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #A8CF45 0%, #00AEEF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .swiper-container {
+            padding: 20px 0;
+        }
+
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #A8CF45 0%, #00AEEF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="font-outfit">
+    <!-- header -->
+    <header class="absolute top-0 left-0 w-full z-20">
+        <div
+            class="container  xl:container  lg:container  md:container  sm:container mob-s:container mx-auto px-4 flex py-4 justify-between items-center">
+            <div class="logo">
+                <a href="Home.html">
+                    <img src="/assets/images/logo.png" alt="logo" class="xl:w-56 lg:w-44 md:w-32 mob-s:w-36">
+                </a>
+            </div>
+            <nav class="hidden md:flex md:flex-row md:items-center">
+                <ul class="flex flex-col md:flex-row items-center justify-center xl:gap-8 md:gap-5">
+                    <li>
+                        <a href="Home.html" class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="About-us.html" class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">About
+                            Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Services.html"
+                            class="xl:text-xl md:text-sm text-[#404040] hover:hover:text-highlight">Services</a>
+
+                    </li>
+                    <li>
+                        <a href="Appointment.html"
+                            class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">Appointment</a>
+
+                    </li>
+                    <li class="relative">
+                        <a href="Blogs.html" class="xl:text-xl md:text-sm text-[#404040] text-highlight">Blogs</a>
+                        <span class="absolute text-highlight text-3xl right-3 -bottom-3">...</span>
+                    </li>
+                    <li>
+                        <a href="Contact Us.html"
+                            class="xl:text-xl md:text-sm text-[#404040] hover:text-highlight">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="flex items-center space-x-5 sm:flex hidden">
+                <a href=""
+                    class="text-primary lg:text-xl border-b-2 border-primary font-medium hover:text-highlight hover:border-highlight">Login</a>
+                <a href=""
+                    class="bg-highlight text-white lg:text-base md:text-sm md:px-2 lg:px-5 mob-s:px-2 mob-s:py-2 rounded-full flex items-center hover:bg-white hover:text-highlight shadow-2xl shadow-highlight transition-colors">
+                    Call Now
+                    <i class="fa-solid fa-phone lg:ml-2 text-sm"></i>
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="block md:hidden p-1 focus:outline-none">
+                <img src="assets/images/menu.png" alt="menu" class="mob-s:w-6">
+            </button>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="hidden sm:hidden p-2 bg-white text-center text-black absolute top-full left-0 w-full shadow-lg"
+                style="z-index: 99999;">
+                <a href="Home.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+                <a href="About-us.html" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+                <a href="Services.html" class="block px-4 py-2 hover:bg-gray-100">Services</a>
+                <a href="Appointment.html" class="block px-4 py-2 hover:bg-gray-100">Appointment</a>
+                <a href="Blogs.html" class="block px-4 py-2 hover:bg-gray-100">Blogs</a>
+                <a href="Contact Us.html" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
+                <div class="flex items-center justify-center space-x-5 mt-5">
+                    <a href=""
+                        class="text-primary lg:text-xl border-b-2 border-primary font-medium hover:text-highlight hover:border-highlight">Login</a>
+                    <a href=""
+                        class="bg-blue-500 text-white md:text-sm md:px-2 lg:px-5 mob-s:px-2 mob-s:py-2 rounded-full flex items-center hover:bg-blue-600 transition-colors">
+                        Call Now
+                        <i class="fa-solid fa-phone lg:ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- main  -->
+    <main>
+        <!-- sub banner -->
+        <section class="sub-banner bg-cover relative overflow-hidden xl:h-[700px] py-20">
+            <div class="container xl:container lg:container md:container sm:container mob-s:container mx-auto px-4">
+                <div class="sub-banner-content md:py-20">
+                    <div class="grid md:grid-cols-2 gap-8 items-end">
+                        <div class="space-y-7 z-10 lg:mt-24 mob-s:mt-10">
+                            <!-- Breadcrumb -->
+                            <div class="flex items-center space-x-5 text-xl">
+                                <a href="Home.html" class="text-highlight hover:text-primary">Home</a>
+                                <span class="text-highlight">></span>
+                                <a href="Blogs.html" class="text-highlight hover:text-primary">Blogs</a>
+                                <span class="text-highlight">></span>
+                                <span class="text-highlight">Blogs Details</span>
+                            </div>
+
+                            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-primary font-workSans">
+                                Our Blogs
+                            </h1>
+
+                            <p class="lg:text-lg text-[#404040] max-w-xl">
+                                Good health is a state of mental, physical and social well being and it does not just
+                                mean the absence diseases!
+                            </p>
+                        </div>
+                        <div
+                            class="z-10 flex items-end justify-center md:absolute xl:bottom-0 xl:right-72 lg:bottom-16 lg:right-44 sm:bottom-4 sm:right-20">
+                            <img src="assets/images/blog-detail.png" alt="images"
+                                class="xl:w-[450px] lg:w-[350px] w-[300px]">
+                        </div>
+                        <div class="absolute right-0  bottom-30 mob-s:block md:hidden w-full h-[200px]">
+                            <img src="assets/images/Rectangle 28.png" alt="sub-banner"
+                                class="opacity-60 w-full h-[300px] object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute left-0 top-0 w-full">
+                <img src="assets/images/sub-banner.png" alt="sub-banner"
+                    class="w-full  xl:h-[700px] md:h-[540px] mob-l:h-[742px] mob-s:h-[757px] opacity-20 object-cover">
+            </div>
+            <div class="absolute right-0 xl:bottom-0 lg:bottom-16 md:bottom-4 mob-s:hidden md:inline-block">
+                <img src="assets/images/Rectangle 28.png" alt="sub-banner"
+                    class="opacity-60 xl:w-full lg:w-96 sm:w-72 xl:h-[700px] lg:h-[550px] md:h-[560px] object-cover">
+            </div>
+            <div class="absolute top-0 left-0 w-full">
+                <img src="assets/images/Ellipse 10.png" alt="Ellipse"
+                    class=" w-full  xl:h-[700px] md:h-[540px] mob-l:h-[742px] mob-s:h-[757px]">
+            </div>
+            <div class="absolute top-0 left-0">
+                <img src="assets/images/Ellipse 9.png" alt="Ellipse" class="w-full">
+            </div>
+        </section>
+        <div class="md:my-28 mob-s:my-10 "></div>
+        <!-- Blog Details -->
+        <section class="">
+            <div class="container mx-auto px-4">
+                <!-- Header -->
+                <div class="text-center md:mb-24 mob-s:mb-10">
+                    <span class="text-highlight font-medium">Our Blogs</span>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-primary mt-2 font-workSans">
+                        Don't Wait Until It's Too Late, Read Our Blog Today!
+                    </h2>
+                    <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+                        A Big & Dedicated Team of Experienced Pediatricians to provide Quality Healthcare.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 grid-cols-1 gap-8">
+                    <!-- Main Content -->
+                    <div class="md:col-span-2">
+                        <!-- Featured Image -->
+                        <div class="rounded-3xl mb-6">
+                            <img src="assets/images/blogs-1.png" alt="Medical consultation"
+                                class="mob-xl:w-full rounded-3xl mob-s:w-72 object-cover">
+                        </div>
+
+                        <!-- Author Info -->
+                        <div class="flex items-center gap-3 mb-6">
+                            <img src="assets/images/blog-person.png" alt="Author avatar" class="w-10 h-10 rounded-full">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <p class="text-lg">by <span class="text-highlight">Creativemela</span></p>
+                                <span class="mx-2 text-xl text-gray-300">|</span>
+                                <span>22 Aug 2023</span>
+                            </div>
+                        </div>
+
+                        <!-- Post Content -->
+                        <div class="overflow-hidden">
+                            <h1 class="xl:text-4xl lg:text-2xl text-xl font-bold text-primary mb-6 xl:leading-relaxed lg:leading-relaxed md:leading-relaxed">
+                                Migration Pellentesque consequat in augue sedus sodales Top Standard size of the
+                            </h1>
+
+                            <p class="text-gray-600 xl:text-xl lg:text-base md:text-sm text-xs xl:leading-loose lg:leading-loose md:leading-loose mb-6">
+                                Sed nec sapien eu nibh porta fringilla. Aenean in lectus id tellus tempor viverra vitae
+                                a elit. Nulls sit amet magna elementum ipsum. Duis bibendum pec filter tempus. Morbi
+                                nisi nisi, sagittis at ante ut, tempus convallis magna. Sed non malesuada nisi nec
+                                congue turpis. Nullam ultrices massa quis id volutpat diam fringilla Lorem ipsum life
+                                dolor sit amet, consectetur adipisicing elit. Ut venenatis sagittis tortor, in convallis
+                                justo sagittis et. Nunc placerat risus sem, vitae dictum libero blandit sit amet.
+                                Suspendisse tempor leo nec justo dignissim duis.
+                            </p>
+                            <p class="text-gray-600 xl:text-xl lg:text-base md:text-sm text-xs xl:leading-loose lg:leading-loose md:leading-loose mb-6">
+                                Praesent eu consequat turpis. Aenean in lectus id tellus tempor viverra vitae a elit.
+                                Nulls sit amet magna elementum ipsum. Duis bibendum pec filter tempus. Morbi nisi nisi,
+                                sagittis at ante ut, tempus convallis magna. Sed non malesuada nisi nec congue turpis.
+                                Nullam ultrices massa quis id volutpat diam fringilla Lorem ipsum dolor sit amet,
+                                consectetur adipisicing elit. Ut venenatis sagittis tortor, in convallis justo sagittis
+                                et. Nunc placerat risus sem, vitae dictum libero blandit sit amet. Suspendisse tempor.
+                            </p>
+                            <div
+                                class="bg-[#cceaf8] p-8 max-w-4xl mb-6 rounded-3xl 2xl:translate-x-20 relative">
+                                <p
+                                    class="text-primary font-semibold max-w-4xl lg:text-lg md:text-sm mob-s:text-xs xl:leading-relaxed lg:leading-relaxed md:leading-relaxed">
+                                    Praesent eu consequat turpis. Aenean in lectus id tellus tempor viverra vitae a
+                                    elit. Nulls sit amet magna elementum ipsum. Duis bibendum pec filter tempus. Morbi
+                                    nisi nisi, sagittis at ante ut, tempus convallis magna. Sed non malesuada nisi nec
+                                    congue turpis. Nullam ultrices massa quis id volutpat diam fringilla Lorem ipsum
+                                    dolor sit amet, consectetur adipisicing elit. Ut venenatis sagittis tortor, in
+                                    convallis justo sagittis et. Nunc placerat risus sem, vitae dictum libero blandit
+                                    sit amet. Suspendisse tempor.
+                                </p>
+                                <img src="assets/images/side.png" alt="side"
+                                    class="absolute -left-[15px] bottom-10">
+                            </div>
+
+                            <p class="text-gray-600 xl:text-xl lg:text-base md:text-sm text-xs xl:leading-loose lg:leading-loose md:leading-loose">
+                                Sed nec sapien eu nibh porta fringilla. Aenean in lectus id tellus tempor viverra vitae
+                                a elit. Nulls sit amet magna elementum ipsum. Duis bibendum pec filter tempus. Morbi
+                                nisi nisi, sagittis at ante ut, tempus convallis magna. Sed non malesuada nisi nec
+                                congue turpis. Nullam ultrices massa quis id volutpat diam fringilla Lorem ipsum life
+                                dolor sit amet, consectetur adipisicing elit. Ut venenatis sagittis tortor, in convallis
+                                justo sagittis et.
+                            </p>
+                        </div>
+                        <!-- tages slider -->
+                        <div class="xl:max-w-4xl lg:max-w-3xl md:max-w-xl mt-10">
+                            <!-- Tags -->
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-4 py-1 rounded-full font-semibold">Tag Here</span>
+                                <span class="px-4 py-1 rounded-full text-[#404040]"
+                                    style="background: linear-gradient(156deg, rgba(0,152,218,0.2497373949579832) 0%, rgba(168,207,69,0.24693627450980393) 100%);">Creative</span>
+                                <span class="px-4 py-1 rounded-full text-[#404040]"
+                                    style="background: linear-gradient(156deg, rgba(0,152,218,0.2497373949579832) 0%, rgba(168,207,69,0.24693627450980393) 100%);">Agency</span>
+                                <span class="px-4 py-1 rounded-full text-[#404040]"
+                                    style="background: linear-gradient(156deg, rgba(0,152,218,0.2497373949579832) 0%, rgba(168,207,69,0.24693627450980393) 100%);">Business</span>
+                            </div>
+                            <div class="relative overflow-hidden">
+                                <!-- Slider Content -->
+                                <div class="flex transition-transform duration-500 ease-in-out" id="testimonial-slider">
+                                    <!-- Slide 1 -->
+                                    <div class="min-w-full flex items-center mb-5 rounded-lg">
+                                        <!-- Profile Card -->
+                                        <div class="bg-black rounded-3xl xl:p-14 lg:p-9 p-5 lg:mb-8">
+                                            <div
+                                                class="flex mob-xl:flex-row mob-s:flex-col items-start md:items-center gap-6">
+                                                <!-- Profile Image -->
+                                                <img src="assets/images/tags-1.png" alt="Towkibu Rahman"
+                                                    class="rounded-2xl object-cover">
+
+                                                <div class="flex-1">
+                                                    <div
+                                                        class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                                        <h2 class="text-white text-xl font-semibold">Towkibu Rahman</h2>
+                                                        <!-- Social Icons -->
+                                                        <div class="flex gap-6">
+                                                            <a href=""
+                                                                class="text-gray-400 hover:text-white transition-colors">
+                                                                <i class="fa-brands fa-facebook-f text-xl"></i>
+                                                            </a>
+                                                            <a href=""
+                                                                class="text-gray-400 hover:text-white transition-colors">
+                                                                <i class="fa-brands fa-instagram text-xl"></i>
+                                                            </a>
+                                                            <a href=""
+                                                                class="text-gray-400 hover:text-white transition-colors">
+                                                                <i class="fa-brands fa-dribbble text-xl"></i>
+                                                            </a>
+                                                            <a href=""
+                                                                class="text-gray-400 hover:text-white transition-colors">
+                                                                <i class="fa-brands fa-behance text-xl"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text-gray-400 md:text-base text-sm italic mt-4">
+                                                        Fusce condimentum enim vestibulum libero gravida, ut accumsan
+                                                        quam
+                                                        bibendum.
+                                                        Curabitur gravida faucibus est sit amet cursus. Duis accumsan
+                                                        vel arcu
+                                                        pretium
+                                                        viverra.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 2 -->
+                                    <div class="min-w-full flex items-center mb-5 rounded-lg">
+                                        <!-- Profile Card -->
+                                        <div class="bg-black rounded-3xl xl:p-14 lg:p-9 p-5 lg:mb-8">
+                                            <div
+                                                class="flex mob-xl:flex-row mob-s:flex-col items-start md:items-center gap-6">
+                                                <!-- Profile Image -->
+                                                <img src="assets/images/tags-1.png" alt="Towkibu Rahman"
+                                                    class="rounded-2xl object-cover">
+
+                                                <div class="flex-1">
+                                                    <div
+                                                        class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                                        <h2 class="text-white text-xl font-semibold">Towkibu Rahman</h2>
+                                                        <!-- Social Icons -->
+                                                        <div class="flex gap-6">
+                                                            <a href=""
+                                                                class="text-gray-400 hover:text-white transition-colors">
+                                                                <i class="fa-brands fa-facebook-f text-xl"></i>
+                                                            </a>
+                                                            <a href=""
+                                                                class="text-gray-400 hover:text-white transition-colors">
+                                                                <i class="fa-brands fa-instagram text-xl"></i>
+                                                            </a>
+                                                            <a href=""
+                                                                class="text-gray-400 hover:text-white transition-colors">
+                                                                <i class="fa-brands fa-dribbble text-xl"></i>
+                                                            </a>
+                                                            <a href=""
+                                                                class="text-gray-400 hover:text-white transition-colors">
+                                                                <i class="fa-brands fa-behance text-xl"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text-gray-400 md:text-base text-sm italic mt-4">
+                                                        Fusce condimentum enim vestibulum libero gravida, ut accumsan
+                                                        quam
+                                                        bibendum.
+                                                        Curabitur gravida faucibus est sit amet cursus. Duis accumsan
+                                                        vel arcu
+                                                        pretium
+                                                        viverra.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Navigation -->
+                                <div class="flex justify-between items-center lg:px-10">
+                                    <!-- Previous -->
+                                    <button class="group flex items-center gap-4" id="prev" class="cursor-pointer">
+                                        <div class="w-12 h-12 rounded-full flex items-center justify-center group-hover:bg-green-100 transition-colors"
+                                            style="background: linear-gradient(156deg, rgba(0,152,218,0.2497373949579832) 0%, rgba(168,207,69,0.24693627450980393) 100%);">
+                                            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 19l-7-7 7-7" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="mob-xl:text-sm mob-s:text-xs text-gray-500">Next Portfolio</p>
+                                            <p class="font-semibold text-gray-900 mob-xl:text-base text-sm">Surgery
+                                                Center</p>
+                                        </div>
+                                    </button>
+
+                                    <!-- Next -->
+                                    <button class="group flex items-center gap-4" id="next" class="cursor-pointer">
+                                        <div>
+                                            <p class="mob-xl:text-sm mob-s:text-xs text-gray-500 text-right">Next
+                                                Portfolio</p>
+                                            <p class="font-semibold text-gray-900 mob-xl:text-base text-sm">Surgery
+                                                Center</p>
+                                        </div>
+                                        <div class="w-12 h-12 rounded-full flex items-center justify-center group-hover:bg-green-100 transition-colors"
+                                            style="background: linear-gradient(156deg, rgba(0,152,218,0.2497373949579832) 0%, rgba(168,207,69,0.24693627450980393) 100%);">
+                                            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="space-y-8">
+                        <!-- Search Box -->
+                        <div class="bg-[rgba(0,152,218,0.0984768907563025)] rounded-3xl xl:p-14 lg:p-9 p-5">
+                            <h2 class="lg:text-xl  font-semibold mb-4 font-workSans">Search Here</h2>
+                            <div class="relative">
+                                <input type="text" placeholder="Enter text keyword..."
+                                    class="w-full px-4 py-4 bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-highlight">
+                                <button class="absolute right-3 top-1/2 -translate-y-1/2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 " fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Categories -->
+                        <div class="bg-[rgba(0,152,218,0.0984768907563025)] rounded-3xl xl:p-14 lg:p-9 p-5">
+                            <h2 class="lg:text-2xl font-semibold mb-4 font-workSans">Categories</h2>
+                            <ul
+                                class="lg:space-y-5 flex md:flex-col flex-row md:space-x-0 mob-xl:space-x-5 space-x-2 md:space-y-2 mt-10">
+                                <li>
+                                    <a href=""
+                                        class="inline-block text-highlight lg:text-xl mob-xl:text-base mob-s:text-xs duration-200 ease-in-out hover:scale-125">
+                                        Wellness
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""
+                                        class="inline-block text-highlight lg:text-xl mob-xl:text-base mob-s:text-xs duration-200 ease-in-out hover:scale-125">
+                                        Tips
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""
+                                        class="inline-block text-highlight lg:text-xl mob-xl:text-base mob-s:text-xs duration-200 ease-in-out hover:scale-125">
+                                        Lifestyle
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""
+                                        class="inline-block text-highlight lg:text-xl mob-xl:text-base mob-s:text-xs duration-200 ease-in-out hover:scale-125">
+                                        Health
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""
+                                        class="inline-block text-highlight lg:text-xl mob-xl:text-base mob-s:text-xs duration-200 ease-in-out hover:scale-125">
+                                        Disease
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <!-- Social Icons -->
+                        <div class="bg-[rgba(0,152,218,0.0984768907563025)] rounded-3xl xl:p-14 lg:p-9 p-5">
+                            <h2 class="text-xl font-semibold mb-4 font-workSans">Social Icons</h2>
+                            <div class="flex 2xl:gap-10 md:gap-4 mob-s:gap-4">
+                                <a href=""
+                                    class="group flex items-center justify-center xl:w-16 xl:h-16 lg:w-10 lg:h-10 md:w-8 md:h-8 mob-s:w-14 mob-s:h-14 rounded-full transition-transform duration-300 ease-in-out hover:scale-110"
+                                    style="background: linear-gradient(88deg, rgba(0,152,218,0.2497373949579832) 0%, rgba(168,207,69,0.24693627450980393) 100%);">
+                                    <i
+                                        class="fa-brands fa-facebook xl:text-3xl md:text-base text-2xl group-hover:text-gradient text-black"></i>
+                                </a>
+                                <a href=""
+                                    class="group flex items-center justify-center xl:w-16 xl:h-16 lg:w-10 lg:h-10 md:w-8 md:h-8 mob-s:w-14 mob-s:h-14 rounded-full transition-transform duration-300 ease-in-out hover:scale-110"
+                                    style="background: linear-gradient(88deg, rgba(0,152,218,0.2497373949579832) 0%, rgba(168,207,69,0.24693627450980393) 100%);">
+                                    <i
+                                        class="fa-brands fa-twitter xl:text-3xl md:text-base text-2xl group-hover:text-gradient text-black"></i>
+                                </a>
+                                <a href=""
+                                    class="group flex items-center justify-center xl:w-16 xl:h-16 lg:w-10 lg:h-10 md:w-8 md:h-8 mob-s:w-14 mob-s:h-14 rounded-full transition-transform duration-300 ease-in-out hover:scale-110"
+                                    style="background: linear-gradient(88deg, rgba(0,152,218,0.2497373949579832) 0%, rgba(168,207,69,0.24693627450980393) 100%);">
+                                    <i
+                                        class="fa-brands fa-instagram xl:text-3xl md:text-base text-2xl group-hover:text-gradient text-black"></i>
+                                </a>
+                                <a href=""
+                                    class="group flex items-center justify-center xl:w-16 xl:h-16 lg:w-10 lg:h-10 md:w-8 md:h-8 mob-s:w-14 mob-s:h-14 rounded-full transition-transform duration-300 ease-in-out hover:scale-110"
+                                    style="background: linear-gradient(88deg, rgba(0,152,218,0.2497373949579832) 0%, rgba(168,207,69,0.24693627450980393) 100%);">
+                                    <i
+                                        class="fa-brands fa-dribbble xl:text-3xl md:text-base text-2xl group-hover:text-gradient text-black"></i>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <!-- New Posts -->
+                        <div class="rounded-3xl xl:p-14 lg:p-9 p-5"
+                            style="background: linear-gradient(156deg, rgba(0,152,218,0.2497373949579832) 0%, rgba(168,207,69,0.24693627450980393) 100%);"">
+                            <h2 class=" text-xl font-semibold mb-4 font-workSans">New Posts</h2>
+                            <div class="space-y-4">
+                                <!-- Post Item -->
+                                <div class="flex gap-4">
+                                    <img src="assets/images/post-1.png" alt="Post thumbnail"
+                                        class="lg:w-20 lg:h-20 md:w-14 md:h-14 rounded-3xl object-cover">
+                                    <div>
+                                        <p class="lg:text-lg md:text-sm">by <span
+                                                class="text-highlight">Creativemela</span></p>
+                                        <h3 class="xl:text-base lg:text-sm text-xs font-medium text-gray-500">Focus
+                                            hospital commits their heart
+                                            surgery
+                                            success</h3>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <img src="assets/images/post-2.png" alt="Post thumbnail"
+                                        class="lg:w-20 lg:h-20 md:w-14 md:h-14 rounded-3xl object-cover">
+                                    <div>
+                                        <p class="lg:text-lg md:text-sm">by <span
+                                                class="text-highlight">Creativemela</span></p>
+                                        <h3 class="xl:text-base lg:text-sm text-xs font-medium text-gray-500">Focus
+                                            hospital commits their heart
+                                            surgery
+                                            success</h3>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <img src="assets/images/post-3.png" alt="Post thumbnail"
+                                        class="lg:w-20 lg:h-20 md:w-14 md:h-14 rounded-3xl object-cover">
+                                    <div>
+                                        <p class="lg:text-lg md:text-sm">by <span
+                                                class="text-highlight">Creativemela</span></p>
+                                        <h3 class="xl:text-base lg:text-sm text-xs font-medium text-gray-500">Focus
+                                            hospital commits their heart
+                                            surgery
+                                            success</h3>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <img src="assets/images/post-4.png" alt="Post thumbnail"
+                                        class="lg:w-20 lg:h-20 md:w-14 md:h-14 rounded-3xl object-cover">
+                                    <div>
+                                        <p class="lg:text-lg md:text-sm">by <span
+                                                class="text-highlight">Creativemela</span></p>
+                                        <h3 class="xl:text-base lg:text-sm text-xs font-medium text-gray-500">Focus
+                                            hospital commits their heart
+                                            surgery
+                                            success</h3>
+                                    </div>
+                                </div>
+                                <!-- Repeat for other posts -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="md:my-28 mob-s:my-10 "></div>
+        <!-- blog -->
+        <section class="overflow-hidden">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10">
+                    <h2 class="text-highlight font-medium">Our Blogs</h2>
+                    <h3 class="text-2xl md:text-4xl font-bold text-primary font-workSans">
+                        Don't Wait Until It's Too Late, Read Our Blog Today!
+                    </h3>
+                    <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
+                        A Big & Dedicated Team of Experienced Pediatricians to provide Quality Healthcare.
+                    </p>
+                </div>
+                <!-- Slider Container -->
+                <div class="relative max-w-7xl mx-auto">
+                    <div class="swiper-container flex flex-col items-center">
+                        <div class="swiper-wrapper mb-10">
+                            <!-- Blog Card 1 -->
+                            <div class="swiper-slide">
+                                <div
+                                    class="blog-card bg-white rounded-xl shadow-lg p-5 xl:w-[350px] lg:w-[300px] mob-l:w-[350px] mob-s:w-[300px]">
+                                    <img src="assets/images/blog-1.jpeg" alt="Blog post about immunizations"
+                                        class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <p class="text-[#A8CF45] font-medium mb-2">June 14, 2023</p>
+                                    <h3 class="text-xl font-semibold text-primary font-workSans mb-3 line-clamp-2 ">
+                                        Very important immunizations for children at the age of 12
+                                    </h3>
+                                    <a href="#" class="text-[#00A0DC] font-medium inline-flex items-center group">
+                                        Read More..
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Blog Card 2 -->
+                            <div class="swiper-slide">
+                                <div
+                                    class="blog-card bg-white rounded-xl shadow-lg p-5 xl:w-[350px] lg:w-[300px] mob-l:w-[350px] mob-s:w-[300px]">
+                                    <img src="assets/images/blog-2.jpeg" alt="Blog post about child health"
+                                        class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <p class="text-[#A8CF45] font-medium mb-2">June 16, 2023</p>
+                                    <h3 class="text-xl font-semibold text-primary font-workSans mb-3 line-clamp-2">
+                                        Adapting to the development of children’s needs
+                                    </h3>
+                                    <a href="#" class="text-[#00A0DC] font-medium inline-flex items-center group">
+                                        Read More..
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Blog Card 3 -->
+                            <div class="swiper-slide">
+                                <div
+                                    class="blog-card bg-white rounded-xl shadow-lg p-5 xl:w-[350px] lg:w-[300px] mob-l:w-[350px] mob-s:w-[300px]">
+                                    <img src="assets/images/blog-3.jpeg" alt="Blog post about pediatric care"
+                                        class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <p class="text-[#A8CF45] font-medium mb-2">June 18, 2023</p>
+                                    <h3 class="text-xl font-semibold text-primary font-workSans mb-3 line-clamp-2">
+                                        6 Tips For Maintaining Children’s Mental Health When Sick
+                                    </h3>
+                                    <a href="#" class="text-[#00A0DC] font-medium inline-flex items-center group">
+                                        Read More..
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Blog Card 4 -->
+                            <div class="swiper-slide">
+                                <div
+                                    class="blog-card bg-white rounded-xl shadow-lg p-5 xl:w-[350px] lg:w-[300px] mob-l:w-[350px] mob-s:w-[300px]">
+                                    <img src="/assets/images/blog-4.jpeg" alt="Blog post about child development"
+                                        class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <p class="text-[#A8CF45] font-medium mb-2">June 20, 2023</p>
+                                    <h3 class="text-xl font-semibold text-primary font-workSans mb-3 line-clamp-2">
+                                        Very important immunizations for children at the age of 12
+                                    </h3>
+                                    <a href="#" class="text-[#00A0DC] font-medium inline-flex items-center group">
+                                        Read More..
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Blog Card 1 -->
+                            <div class="swiper-slide">
+                                <div
+                                    class="blog-card bg-white rounded-xl shadow-lg p-5 xl:w-[350px] lg:w-[300px] mob-l:w-[350px] mob-s:w-[300px]">
+                                    <img src="assets/images/blog-5.jpg" alt="Blog post about immunizations"
+                                        class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <p class="text-[#A8CF45] font-medium mb-2">June 14, 2023</p>
+                                    <h3 class="text-xl font-semibold text-primary font-workSans mb-3 line-clamp-2 ">
+                                        Very important immunizations for children at the age of 12
+                                    </h3>
+                                    <a href="#" class="text-[#00A0DC] font-medium inline-flex items-center group">
+                                        Read More..
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href=""
+                                class="inline-block text-center bg-highlight text-white px-8 py-3 rounded-full hover:bg-white hover:text-highlight hover:shadow-xl transition-colors">
+                                See More..
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:my-28 mob-s:my-10"></div>
+        </section>
+    </main>
+    <!-- Newsletter Section -->
+    <div class="container mx-auto px-4 md:-mb-20 relative z-10 overflow-hidden mob-s:mb-10">
+        <div class="relative md:p-12 mob-s:p-6" style="background: linear-gradient(90deg, #A8CF45 0%, #00AEEF 100%);
+            border-radius: 20px;">
+            <div class="md:max-w-4xl mx-auto">
+                <h2
+                    class="text-white text-2xl md:text-3xl font-bold text-center md:mb-10 mob-xl:mb-20 mob-s:mb-10 font-workSans tracking-wider z-20">
+                    Join Our Newsletter
+                </h2>
+                <div class="flex  mob-s:flex-col md:flex-row justify-center items-center mb-6">
+                    <div class="relative flex items-center z-10 p-1 bg-white rounded-full shadow-lg w-full max-w-3xl">
+                        <input type="email" placeholder="Enter your email..."
+                            class="flex-grow px-6 py-4 rounded-full font-semibold text-lg outline-none text-gradient  z-10" />
+                        <button
+                            class="hidden md:block bg-highlight text-white font-medium px-8 py-4 rounded-full shadow-md hover:bg-white hover:text-highlight transition-all"
+                            style="box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">
+                            Subscribe
+                        </button>
+                    </div>
+                    <button
+                        class="inline-block md:hidden w-32 mt-5 bg-[#00A0DC] text-white px-8 py-3 rounded-full hover:bg-white hover:text-highlight hover:shadow-xl transition-colors">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+            <div class="absolute md:-bottom-5 md:top-5 mob-s:top-0 mob-s:bottom-0">
+                <img src="assets/images/newsletter.png" alt="newsletter">
+            </div>
+            <div class="absolute right-40 top-20">
+                <img src="assets/images/star.png" alt="star">
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer -->
+    <footer class="bg-black pt-32 pb-8 relative overflow-hidden">
+        <div class="absolute -top-10 left-0 w-full">
+            <img src="assets/images/bg-1.png" alt="bg-1" class="w-full mob-s:h-[1480px] md:h-[800px] object-cover">
+        </div>
+        <div class="absolute -bottom-0 -left-0">
+            <img src="assets/images/Ellipse 9.png" alt="Ellipse" class="w-full opacity-30">
+        </div>
+        <div class="absolute -top-0 -right-0">
+            <img src="assets/images/Ellipse 10.png" alt="Ellipse"
+                class="w-full  mob-s:h-[1480px] md:h-[800px] opacity-50 rotate-180">
+        </div>
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:gap-10 mb-12">
+                <!-- Column 1 - Logo & Info -->
+                <div class="space-y-8  z-10">
+                    <img src="assets/images/logo.png" alt="Anand Children Hospital" class="h-16">
+                    <p class="text-white xl:text-base mob-s:text-sm">
+                        Anand Children Hospital is one of the largest Pediatric Super Specialty Hospital of South
+                        Gujarat located at the center of the Surat City
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center text-white xl:text-base mob-s:text-sm">
+                            <i class="fa-solid fa-stopwatch text-highlight text-xl xl:text-base mob-s:text-sm mr-4"></i>
+                            09 AM - 10 PM , Monday - Saturday
+                        </div>
+                        <div class="flex items-center text-white xl:text-base mob-s:text-sm">
+                            <i class="fa-solid fa-stopwatch text-highlight text-xl xl:text-base mob-s:text-sm mr-4"></i>
+                            10 AM - 07 PM , Sunday
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2 - Quick Links -->
+                <div class="xl:ml-32 sm:ml-10 z-10  md:mt-0 mob-s:mt-10">
+                    <h3 class="text-[#00AEEF] text-xl font-semibold mb-6 text-gradient">Quick Links</h3>
+                    <ul class="space-y-3 z-10">
+                        <li><a href="Home.html"
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Home</a>
+                        </li>
+                        <li><a href="About-us.html"
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">About
+                                Us</a></li>
+                        <li><a href="Services.html"
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Services</a>
+                        </li>
+                        <li><a href="Appointment.html"
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Appointment</a>
+                        </li>
+                        <li><a href="Blogs.html"
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Blogs</a>
+                        </li>
+                        <li><a href="Contact Us.html"
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 - Useful Links -->
+                <div class="md:mt-20 lg:mt-0 mob-s:mt-10 z-10">
+                    <h3 class="text-[#00AEEF] text-xl font-semibold mb-6 text-gradient">Useful Links</h3>
+                    <ul class="space-y-3 z-10">
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Privacy
+                                Policy</a></li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Terms
+                                and
+                                Conditions</a></li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Disclaimer</a>
+                        </li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">Support</a>
+                        </li>
+                        <li><a href=""
+                                class="text-white hover:text-highlight transition-colors mob-xl:text-base mob-s:text-sm">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 - Get In Touch -->
+                <div class="md:mt-20 lg:mt-0 mob-s:mt-10 z-10">
+                    <h3 class="text-[#00AEEF] text-xl font-semibold mb-6 text-gradient">Get In Touch</h3>
+                    <div class="space-y-4">
+                        <p class="text-white xl:text-base mob-s:text-sm">
+                            1/568 B Por Mohallo, Athugar Street,<br>
+                            Near Kailash Restaurant, Nanpura,<br>
+                            Surat - 395001
+                        </p>
+                        <div class="space-y-2">
+                            <p class="text-white  xl:text-base mob-s:text-sm">
+                                <i class="fa-solid fa-phone text-highlight text-xl mob-s:text-sm xl:mr-4 md:mr-2"></i>
+                                NICU - 9925100141, PICU - 9879612932
+                            </p>
+                            <p class="text-white  xl:text-base mob-s:text-sm">
+                                <i
+                                    class="fa-solid fa-envelope text-highlight text-xl mob-s:text-sm xl:mr-4 md:mr-2"></i>
+                                Email : Anandchildrenhospital@yahoo.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex flex-col-reverse md:flex-row justify-between md:items-center gap-4 md:p-6">
+                    <p class="text-gray-400 text-sm ">
+                        Visitor Count : 87872 | Anand Children Hospital. All right reserved. | Developed By : ABC
+                    </p>
+                    <div class="flex gap-4 z-10">
+                        <a href="https://www.instagram.com/" target="_blank"
+                            class="w-10 h-10 rounded-full text-gradient border border-gray-700 flex items-center justify-center transition-transform hover:scale-110">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank"
+                            class="w-10 h-10 rounded-full text-gradient border border-gray-700 flex items-center justify-center transition-transform hover:scale-110">
+                            <i class="fa-brands fa-facebook text-xl"></i>
+                        </a>
+                        <a href="https://whatsapp.com/" target="_blank"
+                            class="w-10 h-10 rounded-full text-gradient border border-gray-700 flex items-center justify-center transition-transform hover:scale-110">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/mobile-toggle.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            loop: true,
+            centeredSlides: true,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            }
+        });
+    </script>
+</body>
+
+</html>
